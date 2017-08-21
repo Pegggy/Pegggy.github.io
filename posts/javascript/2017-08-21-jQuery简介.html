@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            jQuery简介 | 
+        
+        PenFan&#39;s Blog
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="PenFan">
+    <meta name="description" itemprop="description" content="前端学习">
+    <meta name="keywords" content=",javascript">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PenFan&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="jQuery简介 | PenFan&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png" />
+    <meta property="og:description" content="前端学习">
+    <meta property="og:article:tag" content="javascript"> 
+
+    
+        <meta property="article:published_time" content="8月 21, 2017" />
+        <meta property="article:modified_time" content="8月 21, 2017" />
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="jQuery简介 | PenFan&#39;s Blog">
+    <meta name="twitter:description" content="前端学习">
+    <meta name="twitter:image" content="/img/favicon.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://yoursite.com" />
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://yoursite.com/posts/javascript/2017-08-21-jQuery简介.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "PenFan&#39;s Blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "PenFan",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "皆为虚空，皆为捕风"
+    },
+    "headline": "jQuery简介",
+    "url": "http://yoursite.com/posts/javascript/2017-08-21-jQuery简介.html",
+    "datePublished": "8月 21, 2017",
+    "dateModified": "8月 21, 2017",
+    "description": "前端学习",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+    
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-jQuery-能做什么？"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.jQuery 能做什么？</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-jQuery-对象和-DOM-原生对象有什么区别？如何转化？"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.jQuery 对象和 DOM 原生对象有什么区别？如何转化？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-1将jQuery对象转换为DOM对象"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">2.1将jQuery对象转换为DOM对象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-2将DOM对象转换为jQuery对象"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.2将DOM对象转换为jQuery对象</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-jQuery中如何绑定事件？bind、unbind、delegate、live、on、off都有什么作用？推荐使用哪种？使用on绑定事件使用事件代理的写法？"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.jQuery中如何绑定事件？bind、unbind、delegate、live、on、off都有什么作用？推荐使用哪种？使用on绑定事件使用事件代理的写法？</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#jQuery-如何展示-隐藏元素？"><span class="post-toc-number">4.</span> <span class="post-toc-text">jQuery 如何展示/隐藏元素？</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#jQuery-动画如何使用？"><span class="post-toc-number">5.</span> <span class="post-toc-text">jQuery 动画如何使用？</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如何设置和获取元素内部-HTML-内容？如何设置和获取元素内部文本？"><span class="post-toc-number">6.</span> <span class="post-toc-text">如何设置和获取元素内部 HTML 内容？如何设置和获取元素内部文本？</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如何设置和获取表单用户输入或者选择的内容？如何设置和获取元素属性？"><span class="post-toc-number">7.</span> <span class="post-toc-text">如何设置和获取表单用户输入或者选择的内容？如何设置和获取元素属性？</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用-jQuery实现如下效果"><span class="post-toc-number">8.</span> <span class="post-toc-text">使用 jQuery实现如下效果</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用-jQuery-实现如下效果"><span class="post-toc-number">9.</span> <span class="post-toc-text">使用 jQuery 实现如下效果</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实现如下效果"><span class="post-toc-number">10.</span> <span class="post-toc-text">实现如下效果</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Tab上下切换效果"><span class="post-toc-number">11.</span> <span class="post-toc-text">Tab上下切换效果</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                jQuery简介
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>PenFan</strong>
+        <span>8月 21, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/javascript/">javascript</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=jQuery简介&url=http://yoursite.com/posts/javascript/2017-08-21-jQuery简介.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=jQuery简介&url=http://yoursite.com/posts/javascript/2017-08-21-jQuery简介.html&via=PenFan" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/posts/javascript/2017-08-21-jQuery简介.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/posts/javascript/2017-08-21-jQuery简介.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="1-jQuery-能做什么？"><a href="#1-jQuery-能做什么？" class="headerlink" title="1.jQuery 能做什么？"></a>1.jQuery 能做什么？</h1><p>jQuery 是一个高效、精简并且功能丰富的 JavaScript 工具库。它提供的 API 易于使用且兼容众多浏览器，这让诸如 HTML 文档遍历和操作、事件处理、动画和 Ajax 操作更加简单。能用更少的代码实现更多的功能。</p>
+<h1 id="2-jQuery-对象和-DOM-原生对象有什么区别？如何转化？"><a href="#2-jQuery-对象和-DOM-原生对象有什么区别？如何转化？" class="headerlink" title="2.jQuery 对象和 DOM 原生对象有什么区别？如何转化？"></a>2.jQuery 对象和 DOM 原生对象有什么区别？如何转化？</h1><p>通过jQuery选择器获得的对象就是jQuery对象，DOM对象是使用原生javascript获取的获取到的对象。</p>
+<p><strong>两者区别：</strong></p>
+<ul>
+<li><p>jQuery对象是jQuery独有的，可以使用jQuery的方法，但是无法使用DOM方法。同理DOM对象也无法使用jQuery的方法。比如使用<code>$(&#39;#name&#39;).innerHTML = &#39;aaa&#39;</code>就会报错。</p>
+</li>
+<li><p>用jQuery选择器取得的是jQuery对象与document.getElementById(“id”)得到的DOM对象，这两者并不等价，即使取的是同一个对象。</p>
+</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/83f2d4ffgy1fijauhj83qj20aw0agaak.jpg" alt="jq&amp;dom"></p>
+<p>两者转换前首先我们给一个约定：如果一个获取的是 jQuery对象，那么我们在变量前面加上$，如：var $variab = jQuery对象；如果获取的是DOM对象，则与习惯普通一样：var variab = DOM对象；这么约定只是便于讲解与区别，实际使用中并不规定。</p>
+<h2 id="2-1将jQuery对象转换为DOM对象"><a href="#2-1将jQuery对象转换为DOM对象" class="headerlink" title="2.1将jQuery对象转换为DOM对象"></a>2.1将jQuery对象转换为DOM对象</h2><p>通过类数组下标的获取方式或者get方法获取指定index的DOM对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var intro = $intro[0]; //dom对象</div><div class="line">var intro = $intro.get(0); // dom对象</div></pre></td></tr></table></figure></p>
+<h2 id="2-2将DOM对象转换为jQuery对象"><a href="#2-2将DOM对象转换为jQuery对象" class="headerlink" title="2.2将DOM对象转换为jQuery对象"></a>2.2将DOM对象转换为jQuery对象</h2><p>对于已经是一个DOM对象，只需要用$()把DOM对象包装起来，就可以获得一个jQuery对象了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var intro = document.querySelector(&apos;.intro&apos;);//dom对象</div><div class="line">var $intro = $(intro);//jQuery对象</div></pre></td></tr></table></figure>
+<h1 id="3-jQuery中如何绑定事件？bind、unbind、delegate、live、on、off都有什么作用？推荐使用哪种？使用on绑定事件使用事件代理的写法？"><a href="#3-jQuery中如何绑定事件？bind、unbind、delegate、live、on、off都有什么作用？推荐使用哪种？使用on绑定事件使用事件代理的写法？" class="headerlink" title="3.jQuery中如何绑定事件？bind、unbind、delegate、live、on、off都有什么作用？推荐使用哪种？使用on绑定事件使用事件代理的写法？"></a>3.jQuery中如何绑定事件？bind、unbind、delegate、live、on、off都有什么作用？推荐使用哪种？使用on绑定事件使用事件代理的写法？</h1><p>jQuery有四种事件绑定的方法：bind/live/delegate和on。在1.7之前的版本中jQuery处理事件有多个方法，作用各不相同，后来统一的使用on/off方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">bind()     版本号小于3.0（在Jquery3.0中已经移除，相应unbind()也移除）</div><div class="line">live()     版本号小于1.7（在Jquery1.7中已经移除，相应die()也移除）</div><div class="line">delegate() 版本号小于1.7（在Jquery1.7中已经移除）</div><div class="line">on()       版本号大于1.7（在Jquery1.7中添加，相应off()也添加）</div></pre></td></tr></table></figure></p>
+<p>bind()函数只能针对已经存在的元素进行事件的设置；但是live(),on(),delegate()均支持未来新添加元素的事件设。</p>
+<p>1 .bind() 为一个元素绑定一个事件处理程序。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;#foo&apos;).bind(&apos;click&apos;, function() &#123;</div><div class="line">  alert(&apos;User clicked on &quot;foo.&quot;&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>2 .unbind() 从元素上删除一个以前附加事件处理程序。用.bind()方法绑定的事件处理程序可以使用.unbind()移除。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#foo&apos;).unbind();</div></pre></td></tr></table></figure></p>
+<p>上面的代码删除所有事件类型的处理程序。为了更加精确，我们可以传递一个事件类型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&apos;#foo&apos;).unbind(&apos;click&apos;);</div></pre></td></tr></table></figure></p>
+<p>3 .delegate() 为所有匹配选择器（selector参数）的元素绑定一个或多个事件处理函数，基于一个指定的根元素的子集，匹配的元素包括那些目前已经匹配到的元素，也包括那些今后可能匹配到的元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&quot;table&quot;).delegate(&quot;td&quot;, &quot;click&quot;, function() &#123;</div><div class="line">  $(this).toggleClass(&quot;chosen&quot;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>是等价于下面使用.on()的代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&quot;table&quot;).on(&quot;click&quot;, &quot;td&quot;, function() &#123;</div><div class="line">  $(this).toggleClass(&quot;chosen&quot;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>4 .undelegate() 删除当前选择器匹配的所有元素的事件处理程序，根据一组特定根元素的集合。.undelegate是用来移除使用.delegate()的方式已经绑定的事件处理程序。</p>
+<p>解除绑定的所有段落都从委托的事件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&quot;p&quot;).undelegate()</div></pre></td></tr></table></figure></p>
+<p>解除绑定的所有段落的所有委托点击事件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&quot;p&quot;).undelegate( &quot;click&quot; )</div></pre></td></tr></table></figure></p>
+<p>5 .live()附加一个事件处理器到匹配目前选择器的所有元素，现在和未来。</p>
+<p>点击段落时，添加另一个段落。注意，.live() 会为所有的段落(包括新生成的段落)绑定事件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(&quot;a&quot;).live(&quot;click&quot;, function() &#123; return false; &#125;)</div></pre></td></tr></table></figure></p>
+<p>通过使用 preventDefault 方法仅取消默认的动作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&quot;a&quot;).live(&quot;click&quot;, function(event)&#123;</div><div class="line">  event.preventDefault();</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>使用 .live() 绑定自定义事件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$(&quot;p&quot;).live(&quot;myCustomEvent&quot;, function(e, myName, myValue) &#123;</div><div class="line">  $(this).text(&quot;Hi there!&quot;);</div><div class="line">  $(&quot;span&quot;).stop().css(&quot;opacity&quot;, 1)</div><div class="line">           .text(&quot;myName = &quot; + myName)</div><div class="line">           .fadeIn(30).fadeOut(1000);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">$(&quot;button&quot;).click(function () &#123;</div><div class="line">  $(&quot;p&quot;).trigger(&quot;myCustomEvent&quot;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>6 .on()在选定的元素上绑定一个或多个事件处理函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.on( events [,selector ] [,data ], handler(eventObject) )</div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>events：一个或多个空格分隔的事件类型和可选的命名空间，或仅仅是命名空间，比如”click”, “keydown.myPlugin”, 或者 “.myPlugin”</p>
+</li>
+<li><p>selector：一个选择器字符串，用于过滤出被选中的元素中能触发事件的后代元素。如果选择器是 null 或者忽略了该选择器，那么被选中的元素总是能触发事件</p>
+</li>
+<li><p>data：当一个事件被触发时，要传递给事件处理函数的event.data</p>
+</li>
+<li><p>handler(eventObject)：事件被触发时，执行的函数。若该函数只是要执行return false的话，那么该参数位置可以直接简写成 false</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">// 普通事件绑定，最简单的用法</div><div class="line">$(&apos;div&apos;).on(&apos;click&apos;, function(e)&#123;</div><div class="line">    console.log(this);</div><div class="line">    console.log(e);</div><div class="line">&#125;)</div><div class="line"></div><div class="line">// 事件委托或者事件代理，想让div 下面所有的span绑定事件，可以把事件绑定到div上</div><div class="line">$(&apos;div&apos;).on(&apos;click&apos;, &apos;span&apos;, function(e)&#123;</div><div class="line">    console.log(this);</div><div class="line">    console.log(e);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">// 可以在绑定的时候给事件处理程序传递一些参数</div><div class="line">$(&apos;div&apos;).on(&apos;click&apos;, &#123;name: &apos;Byron&apos;, age: 24&#125;, function(e)&#123;</div><div class="line">    console.log(e.data);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>7 .off()移除一个事件处理函数。off() 方法移除用.on()绑定的事件处理程序。可以通过提供组合的事件名，名字空间，选择器或处理函数来移除绑定在元素上指定的事件处理函数<strong>。当有多个过滤参数时，只有与这些参数完全匹配的事件处理函数才会被移除。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//移除所有div元素的click事件</div><div class="line">$(&apos;div&apos;).off(&apos;click&apos;)</div></pre></td></tr></table></figure>
+<p>推荐使用on方法，on()方法可以绑定动态添加到页面元素的事件，用.on()方法绑定的事件不需要关心注册该事件的元素何时被添加进来，也不需要重复绑定。</p>
+<p>当需要为大量后代元素绑定相同事件时，推荐使用事件委托，可以提供效率，大大缩短绑定时间。</p>
+<p>假设页面上有10000个li元素，同时为它们绑定click事件，为单个li元素绑定click事件时，经测试，耗费大约100ms较长，而直接绑定在ul元素上时，只需1ms。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var $li = $(&apos;#test&gt;li&apos;);</div><div class="line">var timeStart = new Date();</div><div class="line">// $li.click(function()&#123;</div><div class="line">// 	console.log(this);</div><div class="line">// &#125;)</div><div class="line">var $ul = $(&apos;#test&apos;);</div><div class="line">$ul.on(&apos;click&apos;,&apos;li&apos;,function()&#123;</div><div class="line">	console.log(this);</div><div class="line">&#125;)</div><div class="line">var timeEnd = new Date();</div><div class="line">console.log(timeEnd - timeStart);</div></pre></td></tr></table></figure></p>
+<p>on绑定事件代理写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//把click事件绑定到ul的子元素li上</div><div class="line">$(&apos;ul&apos;).on(&apos;click&apos;,&apos;li&apos;,function()&#123;</div><div class="line">    console.log(this);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h1 id="jQuery-如何展示-隐藏元素？"><a href="#jQuery-如何展示-隐藏元素？" class="headerlink" title="jQuery 如何展示/隐藏元素？"></a>jQuery 如何展示/隐藏元素？</h1><ul>
+<li>hide()/show() 隐藏、显示匹配元素</li>
+<li>fadeIn()/fadeOut() 以淡入方式显示匹配元素/以淡出方式隐藏匹配元素</li>
+<li>slideDown()/slideUp() 用滑动动画显示一个匹配元素/用滑动动画隐藏一个匹配元素</li>
+<li>slideToggle() 用滑动动画显示或隐藏一个匹配元素</li>
+<li>toggle() 显示或隐藏匹配元素</li>
+<li>animate() 执行一个CSS属性设置的自定义动画</li>
+</ul>
+<h1 id="jQuery-动画如何使用？"><a href="#jQuery-动画如何使用？" class="headerlink" title="jQuery 动画如何使用？"></a>jQuery 动画如何使用？</h1><p>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.animate( properties [, duration ] [, easing ] [, complete ] )</div></pre></td></tr></table></figure></p>
+<p><strong>properties</strong></p>
+<p>一个CSS属性和值的对象,动画将根据这组对象移动。</p>
+<p><strong>duration (默认: 400)</strong></p>
+<p>一个字符串或者数字决定动画将运行多久。（愚人码头注：默认值: “normal”， 三种预定速度的字符串(“slow”, “normal”, 或 “fast”)或表示动画时长的毫秒数值(如：1000) ）</p>
+<p><strong>easing (默认: swing)</strong></p>
+<p>一个字符串，表示过渡使用哪种缓动函数。（译者注：jQuery自身提供”linear” 和 “swing”）</p>
+<p><strong>complete</strong></p>
+<p>在动画完成时执行的函数。</p>
+<p>.animate()方法允许我们在任意的数值的CSS属性上创建动画。唯一必要的属性就是一组CSS属性键值对。这组属性和用于设置.css()方法的属性键值对类似，除了属性范围做了更多限制。</p>
+<p>所有用于动画的属性必须是数字的，除非另有说明；这些属性如果不是数字的将不能使用基本的jQuery功能。（例如，width, height或者left可以执行动画，但是background-color不能，除非使用jQuery.Color插件。）属性值的单位像素（px）,除非另有说明。单位em 和 %需要指定使用。</p>
+<p>除了样式属性， 一些非样式的属性，如scrollTop 和 scrollLeft，以及自定义属性，也可应用于动画。</p>
+<p>CSS简写属性（例如font, background, border）没有得到充分的支持。例如， 如果你想边框宽度做动画呈现，至少边框样式和边框宽度必须预先设定不为”auto” 。或者，如果你想字体大小做动画， 你可以使用fontSize的或相当于CSS的 ‘font-size’ ，而不是简单的’font’。</p>
+<p>动画属性也可以是一个相对值。如果提供一个以+= 或 -=开始的值，那么目标值就是以这个属性的当前值加上或者减去给定的数字来计算的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//在2s内，将$img透明度变为1，宽变为450px，高变为330px</div><div class="line">$img.animate(&#123;opacity:1,width:&apos;450px&apos;,height:&apos;330px&apos;&#125;,2000);</div><div class="line">//在1s内，将$img元素向下移动50px并向右移动30px</div><div class="line">$img.animate(&#123;top:&apos;+=50px&apos;,left:&apos;+=30px&apos;&#125;,1000);</div><div class="line"></div><div class="line">//animate可以连续调用，因为每次调用完毕后还是返回一个jQuery对象</div><div class="line">$( &quot;#go1&quot; ).click(function()&#123;</div><div class="line">  $( &quot;#block1&quot; ).animate( &#123; width: &quot;90%&quot; &#125;, &#123; queue: false, duration: 3000 &#125;)</div><div class="line">     .animate(&#123; fontSize: &quot;24px&quot; &#125;, 1500 )</div><div class="line">     .animate(&#123; borderRightWidth: &quot;15px&quot; &#125;, 1500 );</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h1 id="如何设置和获取元素内部-HTML-内容？如何设置和获取元素内部文本？"><a href="#如何设置和获取元素内部-HTML-内容？如何设置和获取元素内部文本？" class="headerlink" title="如何设置和获取元素内部 HTML 内容？如何设置和获取元素内部文本？"></a>如何设置和获取元素内部 HTML 内容？如何设置和获取元素内部文本？</h1><p>.html()获取元素内部html内容，.text()设置和获取元素内部文本。</p>
+<h1 id="如何设置和获取表单用户输入或者选择的内容？如何设置和获取元素属性？"><a href="#如何设置和获取表单用户输入或者选择的内容？如何设置和获取元素属性？" class="headerlink" title="如何设置和获取表单用户输入或者选择的内容？如何设置和获取元素属性？"></a>如何设置和获取表单用户输入或者选择的内容？如何设置和获取元素属性？</h1><p>通过.val([value])设置和获取用户输入或选择的内容。</p>
+<p>当方法没有参数的时候返回input的value值，当传递了一个参数的时候，方法修改input的value值为参数值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&apos;input&apos;).val()</div><div class="line"></div><div class="line">$(&apos;input&apos;).val(&apos;newValue&apos;);</div></pre></td></tr></table></figure></p>
+<p>通过.attr()设置和获取元素属性。</p>
+<p><strong>.attr(attributeName)</strong> 获取元素特定属性的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ar title = $( &quot;em&quot; ).attr( &quot;title&quot; );</div></pre></td></tr></table></figure>
+<p><strong>.attr(attributeName,value) / .attr(attributesJson) / .attr( attributeName, function(index, attr) )</strong>  为元素属性赋值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$( &quot;#greatphoto&quot; ).attr( &quot;alt&quot;, &quot;Beijing Brush Seller&quot; );</div><div class="line"></div><div class="line">$( &quot;#greatphoto&quot; ).attr(&#123;</div><div class="line">  alt: &quot;Beijing Brush Seller&quot;,</div><div class="line">  title: &quot;photo by Kelly Clark&quot;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h1 id="使用-jQuery实现如下效果"><a href="#使用-jQuery实现如下效果" class="headerlink" title="使用 jQuery实现如下效果"></a>使用 jQuery实现如下效果</h1><p><a href="http://js.jirengu.com/qivorosofu" target="_blank" rel="external">菜单栏效果</a></p>
+<h1 id="使用-jQuery-实现如下效果"><a href="#使用-jQuery-实现如下效果" class="headerlink" title="使用 jQuery 实现如下效果"></a>使用 jQuery 实现如下效果</h1><p><a href="http://js.jirengu.com/mexomecabo" target="_blank" rel="external">面板切换效果</a></p>
+<h1 id="实现如下效果"><a href="#实现如下效果" class="headerlink" title="实现如下效果"></a>实现如下效果</h1><p><a href="http://js.jirengu.com/bigudinodi" target="_blank" rel="external">批量增加效果</a></p>
+<h1 id="Tab上下切换效果"><a href="#Tab上下切换效果" class="headerlink" title="Tab上下切换效果"></a>Tab上下切换效果</h1><p><a href="http://js.jirengu.com/ralupuvini" target="_blank" rel="external">tab上下切换效果</a></p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/posts/javascript/2017-08-21-jQuery操作.html" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/posts/javascript/2017-08-21-跨域.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="PenFan's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        fangpei9212@163.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="fangpei9212@163.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">17</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/css/">css<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">12</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">17</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Pegggy" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>PenFan's Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

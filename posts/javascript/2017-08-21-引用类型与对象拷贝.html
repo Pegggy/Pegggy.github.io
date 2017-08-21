@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2017 | 
+            引用类型与对象拷贝 | 
         
         PenFan&#39;s Blog
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="PenFan">
     <meta name="description" itemprop="description" content="前端学习">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",javascript">
 
     <!-- Site Verification -->
     
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017 | PenFan&#39;s Blog">
+    <meta property="og:title" content="引用类型与对象拷贝 | PenFan&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="前端学习">
-    
+    <meta property="og:article:tag" content="javascript"> 
 
+    
+        <meta property="article:published_time" content="8月 21, 2017" />
+        <meta property="article:modified_time" content="8月 21, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2017 | PenFan&#39;s Blog">
+    <meta name="twitter:title" content="引用类型与对象拷贝 | PenFan&#39;s Blog">
     <meta name="twitter:description" content="前端学习">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/2017/index.html" />
+        <link rel="canonical" href="http://yoursite.com/posts/javascript/2017-08-21-引用类型与对象拷贝.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "PenFan&#39;s Blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "PenFan",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "皆为虚空，皆为捕风"
+    },
+    "headline": "引用类型与对象拷贝",
+    "url": "http://yoursite.com/posts/javascript/2017-08-21-引用类型与对象拷贝.html",
+    "datePublished": "8月 21, 2017",
+    "dateModified": "8月 21, 2017",
+    "description": "前端学习",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
 
 
     
@@ -267,633 +300,243 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-引用类型有哪些？非引用类型有哪些"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.引用类型有哪些？非引用类型有哪些</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-如下代码输出什么？为什么"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.如下代码输出什么？为什么</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-如下代码输出什么-为什么"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.如下代码输出什么? 为什么</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-如下代码输出什么-为什么"><span class="post-toc-number">4.</span> <span class="post-toc-text">4.如下代码输出什么? 为什么</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-过滤如下数组，只保留正数，直接在原数组上操作"><span class="post-toc-number">5.</span> <span class="post-toc-text">5.过滤如下数组，只保留正数，直接在原数组上操作</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#6-过滤如下数组，只保留正数，原数组不变，生成新数组"><span class="post-toc-number">6.</span> <span class="post-toc-text">6.过滤如下数组，只保留正数，原数组不变，生成新数组</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#7-写一个深拷贝函数，用两种方式实现"><span class="post-toc-number">7.</span> <span class="post-toc-text">7.写一个深拷贝函数，用两种方式实现</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-图片懒加载.html">图片懒加载</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-图片懒加载.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-jQuery操作.html">jQuery操作</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-jQuery操作.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-jQuery简介.html">jQuery简介</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-jQuery简介.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-跨域.html">跨域</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            浏览器出于安全方面的考虑，只允许与本域下的接口交互。不同源的客户端脚本在没有明确授权的情况下，不能读写对方的资源。  
-跨域的方式：
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-跨域.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-异步.html">异步</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-异步.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-事件.html">事件</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-事件.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-正则表达式.html">正则表达式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-正则表达式.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-Math-Array-Date.html">Math/Array/Date</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            1.Mat...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-Math-Array-Date.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-引用类型与对象拷贝.html">引用类型与对象拷贝</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-引用类型与对象拷贝.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-函数与作用域.html">函数与作用域</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-函数与作用域.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/page/2/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                引用类型与对象拷贝
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>PenFan</strong>
+        <span>8月 21, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/javascript/">javascript</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=引用类型与对象拷贝&url=http://yoursite.com/posts/javascript/2017-08-21-引用类型与对象拷贝.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=引用类型与对象拷贝&url=http://yoursite.com/posts/javascript/2017-08-21-引用类型与对象拷贝.html&via=PenFan" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/posts/javascript/2017-08-21-引用类型与对象拷贝.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/posts/javascript/2017-08-21-引用类型与对象拷贝.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="1-引用类型有哪些？非引用类型有哪些"><a href="#1-引用类型有哪些？非引用类型有哪些" class="headerlink" title="1.引用类型有哪些？非引用类型有哪些"></a>1.引用类型有哪些？非引用类型有哪些</h1><p>引用类型是一种数据结构，引用类型的值是引用类型的一个实例。引用类型值有：Object类型、Array类型、Date类型、RegExp类型和Function类型。</p>
+<p>引用类型的值指的是那些保存在堆内存中的对象，变量中保存的实际上只是一个指针，这个指针执行内存中的另一个位置，由该位置保存对象。</p>
+<p>非引用类型有数值、布尔值、null和undefined，指的是保存在栈内存中的简单数据段。</p>
+<h1 id="2-如下代码输出什么？为什么"><a href="#2-如下代码输出什么？为什么" class="headerlink" title="2.如下代码输出什么？为什么"></a>2.如下代码输出什么？为什么</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var obj1 = &#123;a:1, b:2&#125;;</div><div class="line">var obj2 = &#123;a:1, b:2&#125;;</div><div class="line">console.log(obj1 == obj2);</div><div class="line">//false</div><div class="line">//虽然obj1和obj2的值相等，但因为它们指向不同的地址，是两个不同的对象，因此不相等</div><div class="line">console.log(obj1 = obj2);</div><div class="line">// &#123;a:1, b:2&#125;</div><div class="line">//把obj2赋值给obj1</div><div class="line">console.log(obj1 == obj2);</div><div class="line">//true</div><div class="line">//obj1和obj2指向相同的地址，引用的是同一个对象，因此相等</div></pre></td></tr></table></figure>
+<h1 id="3-如下代码输出什么-为什么"><a href="#3-如下代码输出什么-为什么" class="headerlink" title="3.如下代码输出什么? 为什么"></a>3.如下代码输出什么? 为什么</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">var a = 1</div><div class="line">var b = 2</div><div class="line">var c = &#123; name: &apos;Allen&apos;, age: 2 &#125;</div><div class="line">var d = [a, b, c]</div><div class="line"></div><div class="line">var aa = a // 1</div><div class="line">var bb = b // 2</div><div class="line">var cc = c // c的地址</div><div class="line">var dd = d // d的地址</div><div class="line"></div><div class="line">a = 11 // 11</div><div class="line">b = 22 // 22</div><div class="line">c.name = &apos;hello&apos; // c.name = &apos;hello&apos;,cc.name = &apos;hello&apos;</div><div class="line">d[2][&apos;age&apos;] = 3 //</div><div class="line"></div><div class="line">console.log(aa) </div><div class="line">//1</div><div class="line">// aa 被赋值a的初始值为1</div><div class="line"></div><div class="line">console.log(bb) </div><div class="line">//2</div><div class="line">// bb 被赋值b的初始值为2</div><div class="line"></div><div class="line">console.log(cc) </div><div class="line">//&#123;name:&apos;hello&apos;,age:2&#125;</div><div class="line">// cc指向c的内容所在，因为c已经改变了name的值，因此cc也改变了</div><div class="line"></div><div class="line">console.log(dd) </div><div class="line">// [1,2,&#123;name:&apos;hello&apos;,age:3&#125;]</div><div class="line">//dd中，a指向1，b指向2，后来对a、b重新赋值不影响dd中a和b的值，d[2]即为c，将c的age属性改为3后，dd的的指针也指向c，因此跟着改变</div></pre></td></tr></table></figure>
+<h1 id="4-如下代码输出什么-为什么"><a href="#4-如下代码输出什么-为什么" class="headerlink" title="4.如下代码输出什么? 为什么"></a>4.如下代码输出什么? 为什么</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">var a = 1</div><div class="line">var c = &#123; name: &apos;alice&apos;, age: 2 &#125;</div><div class="line"></div><div class="line">function f1(n)&#123;</div><div class="line">  // var n = a || c.age;</div><div class="line">  ++n // n = 2</div><div class="line">&#125;</div><div class="line">function f2(obj)&#123;</div><div class="line">    // var obj = c ;</div><div class="line">  ++obj.age</div><div class="line">&#125;</div><div class="line"></div><div class="line">f1(a) </div><div class="line">f2(c) </div><div class="line">f1(c.age) </div><div class="line"></div><div class="line">console.log(a)</div><div class="line">// 1</div><div class="line">//执行f1(a)时将a的值1赋值给n，之后n自增与a无关，因此a的值不变</div><div class="line"></div><div class="line">console.log(c)</div><div class="line">//&#123; name: &apos;alice&apos;,age: 3&#125;</div><div class="line">//执行f2(c)时将c对象的指针赋值给obj，直接对obj里age属性进行自增操作，此时该c对象age值变为3</div><div class="line">//执行f1(c.age)时也是想c.age的值赋值给n，n的操作与c.age无关</div></pre></td></tr></table></figure>
+<h1 id="5-过滤如下数组，只保留正数，直接在原数组上操作"><a href="#5-过滤如下数组，只保留正数，直接在原数组上操作" class="headerlink" title="5.过滤如下数组，只保留正数，直接在原数组上操作"></a>5.过滤如下数组，只保留正数，直接在原数组上操作</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function filter(arr)&#123;</div><div class="line">    var len = arr.length;</div><div class="line">    for(var i = 0;i &lt; arr.length; i++)&#123;</div><div class="line">        if(arr[i] &lt;= 0)&#123;</div><div class="line">            arr.splice(i,1);</div><div class="line">            i--;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="6-过滤如下数组，只保留正数，原数组不变，生成新数组"><a href="#6-过滤如下数组，只保留正数，原数组不变，生成新数组" class="headerlink" title="6.过滤如下数组，只保留正数，原数组不变，生成新数组"></a>6.过滤如下数组，只保留正数，原数组不变，生成新数组</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var arr = [3,1,0,-1,-3,2,-5]</div><div class="line">function filter(arr)&#123;</div><div class="line">    var arr1 = [];</div><div class="line">    for(var i = 0;i&lt; arr.length;i++)&#123;</div><div class="line">        if(arr[i]&gt;0)&#123;</div><div class="line">            arr1.push[arri];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return arr1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="7-写一个深拷贝函数，用两种方式实现"><a href="#7-写一个深拷贝函数，用两种方式实现" class="headerlink" title="7.写一个深拷贝函数，用两种方式实现"></a>7.写一个深拷贝函数，用两种方式实现</h1><p>示例1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function deepCopy(obj)&#123;</div><div class="line">    var newObj = &#123;&#125;;</div><div class="line">    for(key in obj)&#123;</div><div class="line">        //需要对象自有属性，排除原型链上的属性</div><div class="line">        if(obj.hasOwnProperty(key))&#123;</div><div class="line">            //如果是简单型值就直接拷贝</div><div class="line">            if(typeof obj[key] === &apos;number&apos;||typeof obj[key] === &apos;string&apos;||typeof obj[key] === &apos;boolean&apos;||obj[key] === undefined || obj[key] === null)&#123;</div><div class="line">                newObj[key] = obj[key];</div><div class="line">            &#125;else&#123;</div><div class="line">                //如果obj[key]仍是引用类型数值，则对obj[key]执行递归操作，直到分解为简单值</div><div class="line">                newObj[key] = deepCopy(obj[key]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>示例2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//先利用JSON.stringify()将对象转换为字符串，再用JSON.parse()将字符串转换为对象，此时的对象与原对象就没有关系了</div><div class="line">function deepCopy(obj)&#123;</div><div class="line">    return newObj = JSON.parse(JSON.stringify(obj);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>首先深复制和浅复制只针对像 Object, Array 这样的复杂对象的。简单来说，浅复制只复制一层对象的属性，而深复制则递归复制了所有层级。</p>
+<p>首先深复制和浅复制只针对像 Object, Array 这样的复杂对象的。简单来说，浅复制只复制一层对象的属性，而深复制则递归复制了所有层级。抛开jQuery，上代码例子。下面是一个简单的浅复制实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var obj = &#123; a:1, arr: [2,3] &#125;;</div><div class="line">var shallowObj = shallowCopy(obj);</div><div class="line"></div><div class="line">function shallowCopy(src) &#123;</div><div class="line">  var dst = &#123;&#125;;</div><div class="line">  for (var prop in src) &#123;</div><div class="line">    if (src.hasOwnProperty(prop)) &#123;</div><div class="line">      dst[prop] = src[prop];</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  return dst;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>因为浅复制只会将对象的各个属性进行依次复制，并不会进行递归复制，而 JavaScript 存储对象都是存地址的，所以浅复制会导致 obj.arr 和 shallowObj.arr 指向同一块内存地址，大概的示意图如下。</p>
+<p>导致的结果就是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">shallowObj.arr[1] = 5;</div><div class="line">obj.arr[1]   // = 5</div></pre></td></tr></table></figure></p>
+<p>而深复制则不同，它不仅将原对象的各个属性逐个复制出去，而且将原对象各个属性所包含的对象也依次采用深复制的方法递归复制到新对象上。这就不会存在上面 obj 和 shallowObj 的 arr 属性指向同一个对象的问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var obj = &#123; a:1, arr: [1,2] &#125;;</div><div class="line">var obj2 = deepCopy(obj);</div></pre></td></tr></table></figure></p>
+<p>需要注意的是，如果对象比较大，层级也比较多，深复制会带来性能上的问题。在遇到需要采用深复制的场景时，可以考虑有没有其他替代的方案。在实际的应用场景中，也是浅复制更为常用。</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/posts/javascript/2017-08-21-Math-Array-Date.html" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/posts/javascript/2017-08-21-函数与作用域.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     

@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2017 | 
+            CSS基础知识2 | 
         
         PenFan&#39;s Blog
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="PenFan">
     <meta name="description" itemprop="description" content="前端学习">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",css">
 
     <!-- Site Verification -->
     
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017 | PenFan&#39;s Blog">
+    <meta property="og:title" content="CSS基础知识2 | PenFan&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="前端学习">
-    
+    <meta property="og:article:tag" content="css"> 
 
+    
+        <meta property="article:published_time" content="8月 21, 2017" />
+        <meta property="article:modified_time" content="8月 21, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2017 | PenFan&#39;s Blog">
+    <meta name="twitter:title" content="CSS基础知识2 | PenFan&#39;s Blog">
     <meta name="twitter:description" content="前端学习">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/2017/index.html" />
+        <link rel="canonical" href="http://yoursite.com/posts/css/2017-08-21-CSS基础知识2(选择器、伪类).html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "PenFan&#39;s Blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "PenFan",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "皆为虚空，皆为捕风"
+    },
+    "headline": "CSS基础知识2",
+    "url": "http://yoursite.com/posts/css/2017-08-21-CSS基础知识2(选择器、伪类).html",
+    "datePublished": "8月 21, 2017",
+    "dateModified": "8月 21, 2017",
+    "description": "前端学习",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
 
 
     
@@ -267,633 +300,458 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-class-和-id-的使用场景"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.class 和 id 的使用场景?</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-CSS常见选择器"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.CSS常见选择器</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-选择器的优先级"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.选择器的优先级</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-a-link-a-hover-a-active-a-visited-的顺序"><span class="post-toc-number">4.</span> <span class="post-toc-text">4.a:link, a:hover, a:active, a:visited 的顺序</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-以下选择器的含义："><span class="post-toc-number">5.</span> <span class="post-toc-text">5.以下选择器的含义：</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-图片懒加载.html">图片懒加载</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-图片懒加载.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-jQuery操作.html">jQuery操作</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-jQuery操作.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-jQuery简介.html">jQuery简介</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-jQuery简介.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-跨域.html">跨域</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            浏览器出于安全方面的考虑，只允许与本域下的接口交互。不同源的客户端脚本在没有明确授权的情况下，不能读写对方的资源。  
-跨域的方式：
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-跨域.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-异步.html">异步</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-异步.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-事件.html">事件</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-事件.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-正则表达式.html">正则表达式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-正则表达式.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-Math-Array-Date.html">Math/Array/Date</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            1.Mat...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-Math-Array-Date.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-引用类型与对象拷贝.html">引用类型与对象拷贝</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-引用类型与对象拷贝.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-函数与作用域.html">函数与作用域</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-函数与作用域.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/page/2/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                CSS基础知识2
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>PenFan</strong>
+        <span>8月 21, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/css/">css</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CSS基础知识2&url=http://yoursite.com/posts/css/2017-08-21-CSS基础知识2(选择器、伪类).html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CSS基础知识2&url=http://yoursite.com/posts/css/2017-08-21-CSS基础知识2(选择器、伪类).html&via=PenFan" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/posts/css/2017-08-21-CSS基础知识2(选择器、伪类).html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/posts/css/2017-08-21-CSS基础知识2(选择器、伪类).html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="1-class-和-id-的使用场景"><a href="#1-class-和-id-的使用场景" class="headerlink" title="1.class 和 id 的使用场景?"></a>1.class 和 id 的使用场景?</h1><p>class是类选择器，用于页面中较多元素需采用同一种样式，可以为任意多个元素指定相同的class，也可以为同一个元素指定多个class，只需要用空格分隔即可。</p>
+<p>id选择器是定向的为页面中唯一的某个元素指定样式，id选择器不可结合使用，不允许出现以空格分隔的词列表。</p>
+<h1 id="2-CSS常见选择器"><a href="#2-CSS常见选择器" class="headerlink" title="2.CSS常见选择器"></a>2.CSS常见选择器</h1><ul>
+<li>基础选择器</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>通用选择器，匹配页面任何元素（使用较少）</td>
+</tr>
+<tr>
+<td>#id</td>
+<td>id选择器，匹配特性id元素</td>
+</tr>
+<tr>
+<td>.class</td>
+<td>类选择器，匹配包含该class类的元素</td>
+</tr>
+<tr>
+<td>element</td>
+<td>标签选择器</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>组合选择器</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E,F</td>
+<td>多元素选择器，同时匹配E和F元素</td>
+</tr>
+<tr>
+<td>E F</td>
+<td>后代选择器，用空格分隔，匹配E元素所有后代元素F</td>
+</tr>
+<tr>
+<td>E&gt;F</td>
+<td>子元素选择器，用&gt;分隔，匹配E元素的所有直接子元素</td>
+</tr>
+<tr>
+<td>E+F</td>
+<td>直接相邻选择器，匹配E元素之后的相邻的同级元素F</td>
+</tr>
+<tr>
+<td>E~F</td>
+<td><strong>普通相邻选择器（弟弟选择器），匹配E元素之后的同级元素F（无论直接相邻与否）</strong></td>
+</tr>
+<tr>
+<td>.class1.class2</td>
+<td>id和class选择器和选择器连写的时候中间没有分隔符，. 和 # 本身充当分隔符的元素</td>
+</tr>
+<tr>
+<td>element#id</td>
+<td>id和class选择器和选择器连写的时候中间没有分隔符，. 和 # 本身充当分隔符的元素</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>伪类选择器</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E:link</td>
+<td>匹配所有未被点击的链接</td>
+</tr>
+<tr>
+<td>E:visited</td>
+<td>匹配所有已被点击的链接</td>
+</tr>
+<tr>
+<td>E:active</td>
+<td>匹配鼠标已经其上按下、还没有释放的E元素</td>
+</tr>
+<tr>
+<td>E:hover</td>
+<td>匹配鼠标悬停其上的E元素</td>
+</tr>
+<tr>
+<td>E:focus</td>
+<td>匹配获得当前焦点的E元素</td>
+</tr>
+<tr>
+<td>E:enabled</td>
+<td>匹配表单中可用的元素</td>
+</tr>
+<tr>
+<td>E:disabled</td>
+<td>匹配表单中禁用的元素</td>
+</tr>
+<tr>
+<td>E:checked</td>
+<td>匹 配表单中被选中的radio或checkbox元素</td>
+</tr>
+<tr>
+<td>E::selection</td>
+<td>匹配用户当前选中的元素</td>
+</tr>
+<tr>
+<td>E:first-child</td>
+<td>匹配作为长子（第一个子女）的元素E</td>
+</tr>
+<tr>
+<td>E:nth-child(n)</td>
+<td>匹配其父元素的第n个子元素，第一个编号为1</td>
+</tr>
+<tr>
+<td>E:nth-last-child(n)</td>
+<td>匹配其父元素的倒数第n个子元素，第一个编号为1</td>
+</tr>
+<tr>
+<td>E:nth-of-type(n)</td>
+<td>与:nth-child()作用类似，但是仅匹配使用同种标签的元素</td>
+</tr>
+<tr>
+<td>E:nth-last-of-type(n)</td>
+<td>与:nth-last-child() 作用类似，但是仅匹配使用同种标签的元素</td>
+</tr>
+</tbody>
+</table>
+<p>n的取值有：</p>
+<ol>
+<li>1，2，3，4，5</li>
+<li>2n+1，2n，4n-1</li>
+<li>odd，even</li>
+</ol>
+<ul>
+<li>伪元素选择器</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E::first-line</td>
+<td>匹配E元素内容的第一行</td>
+</tr>
+<tr>
+<td>E::first-letter</td>
+<td>匹配E元素内容的第一个字母</td>
+</tr>
+<tr>
+<td>E::before</td>
+<td>在E元素之前插入生成的内容</td>
+</tr>
+<tr>
+<td>E::after</td>
+<td>在E元素之后插入生成的内容</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>属性选择器（使用较少）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E[attr]</td>
+<td>匹配所有具有属性attr的元素，div[id]就能取到所有有id属性的div</td>
+</tr>
+<tr>
+<td>row 2 col 1</td>
+<td>匹配属性attr值为value的元素，div[id=test],匹配id=test的div</td>
+</tr>
+</tbody>
+</table>
+<h1 id="3-选择器的优先级"><a href="#3-选择器的优先级" class="headerlink" title="3.选择器的优先级"></a>3.选择器的优先级</h1><ol>
+<li><code>!important</code> ，在属性后面使用<code>!important</code>会覆盖页面内任何位置定义的元素样式</li>
+<li>内联样式</li>
+<li>id选择性指定的样式</li>
+<li>class选择器指定的样式</li>
+<li>伪类选择器指定的样式</li>
+<li>属性选择器指定的样式</li>
+<li>标签定义的样式</li>
+<li><code>*</code> 定义的样式</li>
+<li>浏览器样式</li>
+</ol>
+<p><strong>复杂场景优先级计算</strong></p>
+<ul>
+<li>行内样式 <div style="xxx"></div> ==&gt; 1，0，0，0</li>
+<li>ID 选择器 ==&gt; 0，1，0，0</li>
+<li>类，属性选择器和伪类选择器 ==&gt; 0，0，1，0</li>
+<li>标签选择器、伪元素 ==&gt; 0，0，0，1<br>根据元素的样式所占权重进行计算，值越大，样式优先级越高；后面的样式会覆盖前面的样式。</li>
+</ul>
+<h1 id="4-a-link-a-hover-a-active-a-visited-的顺序"><a href="#4-a-link-a-hover-a-active-a-visited-的顺序" class="headerlink" title="4.a:link, a:hover, a:active, a:visited 的顺序"></a>4.a:link, a:hover, a:active, a:visited 的顺序</h1><p><code>a:link</code>a标签初始样式，放于最上部；<br><code>a:visited</code> a标签访问后的状态，位于初始样式之后；<br><code>a:active</code>鼠标点击时的状态，位于样式最底部；<br><code>a:hover</code>鼠标移动过a标签的状态，位于<code>a:visited</code>之后。  </p>
+<p>因为后面的样式会覆盖前面的样式，a标签初始状态样式应该放于最顶部，其他状态都可以覆盖初始状态样式。</p>
+<p><code>a:visited</code>需放置在初始样式之下以避免对hover和active状态产生影响。若置于最后，则一次点击之后，无论再做任何操作，a标签的样式一直都会处于:visited的样式,因为此时将<code>:active、:hover</code>状态都覆盖了。</p>
+<p>同理，<code>:active</code>状态需放置在<code>:hover</code>状态后面。</p>
+<h1 id="5-以下选择器的含义："><a href="#5-以下选择器的含义：" class="headerlink" title="5.以下选择器的含义："></a>5.以下选择器的含义：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#header&#123;</div><div class="line">    id为header的元素</div><div class="line">&#125;</div><div class="line">.header&#123;</div><div class="line">    class为header的元素</div><div class="line">&#125;</div><div class="line">.header .logo&#123;</div><div class="line">    class为header的元素下所有class为logo的后代元素，包括孙子元素。</div><div class="line">&#125;</div><div class="line">.header.mobile&#123;</div><div class="line">    同时具有header和mobileclass的元素</div><div class="line">&#125;</div><div class="line">.header p,.header h3&#123;</div><div class="line">    class为header元素下的所有p元素和h3元素</div><div class="line">&#125;</div><div class="line">#header .nav&gt;li&#123;</div><div class="line">    id为header的元素下所有class为nav的的元素的直接li子元素</div><div class="line">&#125;</div><div class="line">#header a:hover&#123;</div><div class="line">    id为header的元素下所有a标签鼠标移动过的样式</div><div class="line">&#125;</div><div class="line">#header .logo~p&#123;</div><div class="line">    id为header的元素下所有class为logo的的所有同级p元素</div><div class="line">&#125;</div><div class="line">#header input[type=&quot;text&quot;]&#123;</div><div class="line">    id为header的元素下所有具有type=&quot;text&quot;属性的input标签</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong><code>div:first-child、div:first-of-type、div :first-child和div :first-of-type</code>的作用和区别</strong><br><code>div:first-child</code>这是同时满足div要求和first-child要求的元素，两个是同级的关系，first-child是全页面查找的</p>
+<p><code>div :first-child</code>这是选中的div标签下第一个子元素，是父子关系选择器。</p>
+<p><code>div:first-of-type</code>是div元素，同时也是页面中第一个div元素，在该div出现之前没有别的div元素。<br>下例中选中的就是ct下所有子元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;ct&quot;&gt;</div><div class="line">   &lt;p class=&quot;item1&quot;&gt;aa&lt;/p&gt;</div><div class="line">   &lt;h3 class=&quot;item1&quot;&gt;bb&lt;/h3&gt;</div><div class="line">   &lt;h3 class=&quot;item1&quot;&gt;ccc&lt;/h3&gt;</div><div class="line"> &lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p><code>div :first-of-type</code>选中div元素下同种类型元素的第一个元素。上例中就选中了aa和bb，ccc未被选中，因为ccc是第二个h3。</p>
+<p><strong>解析下输出样式的原因：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">.item1:first-child&#123;</div><div class="line">  color: red;</div><div class="line">&#125;</div><div class="line">.item1:first-of-type&#123;</div><div class="line">  background: blue;</div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div><div class="line"> &lt;div class=&quot;ct&quot;&gt;</div><div class="line">   &lt;p class=&quot;item1&quot;&gt;aa&lt;/p&gt;</div><div class="line">   &lt;h3 class=&quot;item1&quot;&gt;bb&lt;/h3&gt;</div><div class="line">   &lt;h3 class=&quot;item1&quot;&gt;ccc&lt;/h3&gt;</div><div class="line"> &lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item1:first-child&#123;</div><div class="line">  color: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>item1选中aa，bb和ccc，但是:first-child匹配父元素下的第一个元素，两个要求同时满足，因此aa颜色变为红色；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.item1:first-of-type&#123;</div><div class="line">  background: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>item1选中aa，bb和ccc，:first-of-type选中父元素下中第一次出现的元素，ccc是第二个h3元素，因此只有aa和bb被选中，背景颜色变为蓝色。</p>
+<p>补充：<br><strong>关于nth-type-of和nth-child的例子：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;class1&quot;&gt;</div><div class="line">    &lt;h1 class=&quot;ct1&quot;&gt;hello&lt;/h1&gt;</div><div class="line">    &lt;p&gt;lalalalalallalala&lt;/P&gt;</div><div class="line">    &lt;h2&gt;world&lt;/h2&gt;</div><div class="line">    &lt;h2 class=&quot;ct2&quot;&gt;hi&lt;/h2&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div class=&quot;class2&quot;&gt;</div><div class="line">    &lt;h1 class=&quot;ct2&quot;&gt;i like&lt;/h1&gt;</div><div class="line">    &lt;h2 class=&quot;ct1&quot;&gt;javascript&lt;/h2&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">//css</div><div class="line">.ct2:nth-of-type(1)&#123;</div><div class="line">    color:blue;</div><div class="line">&#125;</div><div class="line">// .ct2选中hi元素，但是hi是h2标签中的第二个（第一个是world），而i like 是ct2类下的第一个h1元素，因此只有i like变色</div><div class="line">//若采用</div><div class="line">.ct2:nth-type-of(2)&#123;</div><div class="line">    color: blue;</div><div class="line">&#125;</div><div class="line">//此时hi变色，因为hi是h2标签中的第二个，而i like 是h1标签中的第一个，因此不变色</div><div class="line"></div><div class="line">.ct2 :nth-child(1)&#123;</div><div class="line">  color: blue;</div><div class="line">&#125;</div><div class="line">//ct2类下的第一个子元素，中间有一个空格，但是本例中ct2没有子元素，因此没有元素变色</div><div class="line">.ct2:last-child&#123;</div><div class="line">    color:blue;</div><div class="line">&#125;</div><div class="line">//中间无空格，ct2选中了hi和i like，:last-child选中了hi和javascript，因此既满足ct2又满足:last-child的元素只有hi</div></pre></td></tr></table></figure>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/posts/css/2017-08-21-CSS基础知识3.html" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/posts/css/2017-08-21-CSS基础知识1.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     

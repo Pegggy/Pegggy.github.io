@@ -12,7 +12,7 @@
     
     <title>
         
-            CSS基础知识1 | 
+            跨域 | 
         
         PenFan&#39;s Blog
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="PenFan">
     <meta name="description" itemprop="description" content="前端学习">
-    <meta name="keywords" content=",css">
+    <meta name="keywords" content=",javascript">
 
     <!-- Site Verification -->
     
@@ -65,10 +65,10 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="CSS基础知识1 | PenFan&#39;s Blog">
+    <meta property="og:title" content="跨域 | PenFan&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="前端学习">
-    <meta property="og:article:tag" content="css"> 
+    <meta property="og:article:tag" content="javascript"> 
 
     
         <meta property="article:published_time" content="8月 21, 2017" />
@@ -76,7 +76,7 @@
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="CSS基础知识1 | PenFan&#39;s Blog">
+    <meta name="twitter:title" content="跨域 | PenFan&#39;s Blog">
     <meta name="twitter:description" content="前端学习">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -84,7 +84,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2017/08/21/CSS基础知识1/index.html" />
+        <link rel="canonical" href="http://yoursite.com/posts/javascript/2017-08-21-跨域.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -110,8 +110,8 @@
         },
         "description": "皆为虚空，皆为捕风"
     },
-    "headline": "CSS基础知识1",
-    "url": "http://yoursite.com/2017/08/21/CSS基础知识1/index.html",
+    "headline": "跨域",
+    "url": "http://yoursite.com/posts/javascript/2017-08-21-跨域.html",
     "datePublished": "8月 21, 2017",
     "dateModified": "8月 21, 2017",
     "description": "前端学习",
@@ -146,10 +146,6 @@
     
     
     
-    
-    .footer-sns-weibo {
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzUuMiA3OWMtOC42IDMtMjIuOCAxMi40LTMyLjggMjEuOC04LjIgNy44LTIyLjIgMzEtMjQuNiA0MC42LTEgNC4yLTEuNiAxNjctMS42IDM2NC42IDAgMjg0LjguNCAzNTguNCAyLjYgMzY0IDEuNCAzLjggNi44IDEzIDEyIDIwLjQgOC44IDEyLjggMjQgMjUuNCA0MS44IDM1IDYgMy40IDI3IDMuNiAzNjcuNCAzLjYgMjg2LjIgMCAzNjIuNi0uNiAzNjktMi42IDE5LjgtNi4yIDUxLjItMzcuNiA1Ny40LTU3LjQgMi02LjQgMi42LTgyLjYgMi42LTM2OFYxNDFsLTQuMi05Yy0xMS42LTI0LTM5LjItNDkuOC01OC4yLTU0LjItNC4yLTEtMTY4LjYtMS42LTM2NS42LTEuNi0zMDAgMC0zNTkuMi40LTM2NS44IDIuOHptNTU4LjYgMTY5YzguNiAxLjIgMTYuNCA0IDI0IDguNiA2LjIgMy42IDE1LjIgOC4yIDIwLjIgMTAuMiA1LjggMi4yIDE0LjYgOC44IDI1IDE4LjggMjUuNCAyNC44IDMyLjggMzQuOCAzNy44IDUxIDIuNiA4IDcuNCAxOS44IDEwLjggMjYuNCA3LjggMTQuNiAxMS42IDQyLjYgOS40IDY5LTEgMTQuMi0yLjIgMTguNi03LjQgMjYuNC0zLjIgNS4yLTkgMTIuMi0xMi44IDE1LjYtMTMuOCAxMi0zNCA1LjgtMzguOC0xMi0xLjYtNi0xLjQtMTEuNCAxLjItMjMuNCA0LjItMjAgMy00Ni0yLjYtNTguNi0yLjItNS04LTEyLjYtMTIuOC0xNi44LTQuOC00LjItMTQuNi0xNi40LTIxLjgtMjYuOC03LjItMTAuNi0xNS4yLTIwLjgtMTgtMjIuOC0yLjgtMi0xMi42LTYtMjItOS0xNC40LTQuNC0yMC44LTUuNC00My01LjYtMjgtLjItMzEuNC0xLjItNDIuNC0xMS42LTcuNC03LTguNi0xNS42LTMuOC0yNS4yIDctMTMuMiAxNi40LTE2IDU0LjItMTYgMTYuNiAwIDM1LjguOCA0Mi44IDEuOHptLTIxMy42IDc1LjZjMjAuMiAxNS40IDIwLjYgMTYuNCAyMiA0OCAuNiAxNSAxLjggMjkgMi42IDMxIDIuOCA2LjIgMTEgNi42IDIxLjYuNiA1LjQtMy4yIDE0LTUuOCAyMC02LjQgNS44LS42IDE4LjgtMi40IDI5LTQuMiAxNy4yLTMgMTkuNC0zIDM2IC40IDMyIDYuNiAzNS44IDkuMiA0NC4yIDMxLjYgNS4yIDE0IDUuNCAyMS40IDEuMiAzMi44LTIuMiA1LjQtMi44IDExLTIgMTUuNCAxLjggMTAgMTcuNiAyMy40IDM1IDMwLjIgMTEuMiA0LjIgMTYuMiA3LjYgMjcgMTkgMTkuMiAxOS44IDIwLjIgMjMgMjAgNTktLjIgMzUtLjQgMzUuNC0xOS44IDYzLjYtMTMuOCAxOS44LTMyLjQgMzguNi00OSA1MC01IDMuNC0xMi4yIDguOC0xNS44IDEyLTMuOCAzLjItMTEuNiA4LTE3LjIgMTAuNC01LjYgMi42LTE0LjYgNy40LTE5LjggMTAuNi01LjIgMy40LTE1LjggNy42LTIzLjggOS40LTggMi0yMS4yIDYuNi0yOS42IDEwLjItMjIuNCAxMC0zNi4yIDExLjItMTIxLjggMTAuNGwtNzUtLjYtMTktOC40Yy0xMC42LTQuNi0yNS40LTkuOC0zMy0xMS42LTcuNi0xLjYtMTgtNS44LTIzLTlzLTE0LjItOC0yMC40LTEwLjhjLTE4LTgtNTkuNC00Ni4yLTY2LTYxLjItMi4yLTUtNy40LTE0LjQtMTEuNC0yMC44bC03LjItMTJWNTQ5bDcuNi0xMy42YzQuMi03LjQgOS40LTE4LjYgMTEuNi0yNC44IDMuOC0xMS40IDEzLjQtMjcuOCAyNC44LTQyLjYgMjAuMi0yNi4yIDM4LjQtNDYuOCA1My02MCA5LjItOC4yIDIxLTE4LjYgMjYtMjMuMiA1LTQuNCAxMy4yLTExIDE4LjYtMTQuNiA1LjItMy40IDkuNC03LjIgOS40LTggMC0xIDUuNi00LjYgMTIuNi04LjIgNi44LTMuOCAxNi40LTkuNiAyMS40LTEzLjIgNS0zLjYgMTQuNC04IDIxLTkuOCA2LjYtMiAxNy44LTYuNiAyNS0xMC4yIDEyLTYuMiAxNC40LTYuOCAzMi40LTYuOGgxOS40bDEyLjQgOS42em0yMDMuNiAxMy4yYzMgMS42IDYuNiA0LjQgOCA2IDEuNiAxLjggOS40IDcgMTcuNCAxMS42IDE3IDkuNiAxOSAxMyAyNCA0MiAzLjQgMjAuNCAyLjYgMzIuMi0zLjQgNDMuOC03LjYgMTUuMi0yMi44IDIwLjYtMzEuMiAxMS4yLTctNy42LTkuMi0xMy44LTEwLjYtMjkuNi0xLjItMTMuMi0yLjQtMTYuNC05LjYtMjcuMi0xMS0xNi0xNi44LTIwLjYtMjcuMi0yMC42LTEwIDAtMjQtNi4yLTI3LTExLjYtNS44LTEwLjguNC0yNC42IDEyLjQtMjguNCA4LjYtMi42IDQwLjItLjggNDcuMiAyLjh6Ii8+PHBhdGggZD0iTTQyNCA0NzcuNGMtMzIuNiAzLjYtNDcuOCA3LTYxLjggMTMuOC04IDQtMTkgOC40LTI0LjIgMTAtNS4yIDEuNi0xMi40IDUtMTYuMiA3LjgtMy44IDIuNi0xMSA3LjYtMTYuMiAxMS0xMy40IDguOC0zNSAzMy4yLTM4LjggNDQtMS44IDUtNS40IDE0LjQtOC4yIDIxLTguOCAyMS4yLTguMiAyNi44IDQgNTMgMTAuNiAyMi42IDExIDIzLjIgMjcuNiAzNi40IDIxIDE2LjggMjMuNiAxOC40IDUwLjggMjguMiAyMC4yIDcuMiAyNC42IDggNTQgMTAgMTcuNiAxLjIgNDUuNiAyLjIgNjIgMi4ybDMwIC4yIDE3LjQtOC40YzkuNi00LjYgMjIuNC05LjYgMjguMi0xMS40IDYtMS44IDE1LjQtNi4yIDIwLjgtMTAgNS40LTMuNiAxMy40LTguNiAxNy42LTEwLjggOS4yLTQuNiAzOS0zNC40IDM5LTM5IDAtMS42IDMuOC0xMC4yIDguNC0xOC44IDcuOC0xNC4yIDguNi0xNi44IDguNC0yOS42LS4yLTEyLjgtMS0xNS44LTEwLjYtMzQuNi0xMy40LTI2LjItMzAuNC00My42LTUwLjItNTEuNC03LjItMi44LTE2LjItNy0yMC05LjYtMTEuNC03LjYtMTcuNi05LjItNDguOC0xMi40LTI3LjYtMi44LTU2LjYtMy40LTczLjItMS42em0zOS40IDQ0LjRjMTEuMiAyLjIgMjIuNiA1IDI1IDYuNCA3IDMuNiAyNiAyMS44IDMwLjggMjkuNCA4LjYgMTMuNCAxMSA1NCA0LjYgNzctMi42IDkuNi0xOC44IDI3LjYtMzkuNCA0NC4yLTE1LjYgMTIuNC0xNyAxMy0yOS44IDE0LTcuNi44LTIyLjQgMi4yLTMzIDMuNi0yMi42IDIuNi00NS42IDEtNTMuOC0zLjgtMy4yLTItOC02LjgtMTAuOC0xMC44LTIuNi00LjItOC40LTEwLjQtMTIuOC0xMy44LTguMi02LjgtMTMuNC0xNi40LTE5LjQtMzctMy44LTEzLjItMi44LTIxLjggNS4yLTQ3LjYgMy4yLTEwLjQgNi0xNC42IDE3LjQtMjUuOCAxMi40LTEyLjIgMjMuOC0yMi4yIDMzLjItMjkuNiA0LTMgMzguNi05LjQgNTMuNC05LjggNSAwIDE4LjIgMS42IDI5LjQgMy42eiIvPjxwYXRoIGQ9Ik0zODcuMiA2MDZjLTEyLjIgMy44LTE4LjIgMTMuNC0xNSAyNC42IDUuOCAyMS4yIDI3LjggMjUuOCA0MC42IDguNiA2LjYtOC44IDcuOC0xNi4yIDQuMi0yNC00LjgtMTAuMi0xNS40LTEzLjQtMjkuOC05LjJ6Ii8+PC9zdmc+);
-    }
     
     
     
@@ -331,7 +327,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-CSS是什么"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. CSS是什么</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-CSS引入方式"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. CSS引入方式</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-路径"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.路径</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-展示图片"><span class="post-toc-number">4.</span> <span class="post-toc-text">4.展示图片</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-html和css书写规范"><span class="post-toc-number">5.</span> <span class="post-toc-text">5.html和css书写规范</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-JSONP"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.JSONP</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-CORS跨域资源共享"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.CORS跨域资源共享</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-postMessage"><span class="post-toc-number">3.</span> <span class="post-toc-text">2.postMessage</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -369,7 +365,7 @@
         
     
             <p class="article-headline-p">
-                CSS基础知识1
+                跨域
             </p>
         </div>
 
@@ -412,7 +408,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/css/">css</a>
+        <a class="post_tag-link" href="/tags/javascript/">javascript</a>
     </ul>
     
 
@@ -428,7 +424,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CSS基础知识1&url=http://yoursite.com/2017/08/21/CSS基础知识1/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=跨域&url=http://yoursite.com/posts/javascript/2017-08-21-跨域.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -437,7 +433,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CSS基础知识1&url=http://yoursite.com/2017/08/21/CSS基础知识1/index.html&via=PenFan" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=跨域&url=http://yoursite.com/posts/javascript/2017-08-21-跨域.html&via=PenFan" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -446,7 +442,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/08/21/CSS基础知识1/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/posts/javascript/2017-08-21-跨域.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -455,7 +451,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/08/21/CSS基础知识1/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/posts/javascript/2017-08-21-跨域.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -479,43 +475,42 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="1-CSS是什么"><a href="#1-CSS是什么" class="headerlink" title="1. CSS是什么"></a>1. CSS是什么</h1><p>CSS全称是 Cascading Style Sheets, 层叠样式表，对html页面元素进行渲染</p>
-<h1 id="2-CSS引入方式"><a href="#2-CSS引入方式" class="headerlink" title="2. CSS引入方式"></a>2. CSS引入方式</h1><ul>
-<li><p>内联样式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p style=&quot;color:blue;font-size:14px;&quot;&gt;&lt;/p&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>内部样式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;</div><div class="line">  p&#123;</div><div class="line">      color:blue;</div><div class="line">      font-size:14px;</div><div class="line">  &#125;</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;p&gt;hello world&lt;/p&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>外部样式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;main.css&quot;&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">  @import url(&quot;hello.css&quot;)</div><div class="line">  @import &quot;world.css&quot;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><code>&lt;link&gt;</code>是html标签，可以放在页面任何位置。</p>
-<p>@import 是css的语法，只能放在css样式内部，比如<code>&lt;style&gt;</code>里，或者css文件里。不能放在其他地方。</p>
-<p>@import语法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@import url(&quot;main.css&quot;);//引号可去除，分号必须有</div><div class="line">@import &quot;index.css&quot;;</div></pre></td></tr></table></figure></p>
-<ul>
-<li>浏览器默认样式<br>user agent——用户代理，即浏览器 </li>
-</ul>
-<h1 id="3-路径"><a href="#3-路径" class="headerlink" title="3.路径"></a>3.路径</h1><p>相对路径：</p>
-<ul>
-<li>css/a.css 当前css文件夹下a.css文件</li>
-<li>./css/a.css 与css/a.css相同</li>
-<li>b.css 当前目录的b.css文件</li>
-<li>../imgs/a.png 上层目录的imgs文件夹下的a.png文件<br>绝对路径：</li>
-<li>/Users/hunger/project/css/a.css 本地文件的绝对地址，本地可以找到，但是放到服务器上就不能找到了<br>网站路径：</li>
-<li>/static/css/a.css 服务器下文件夹static下css内的a.css文件</li>
-<li><a href="http://cdn.jirengu.com/kejian1/8-1.png" target="_blank" rel="external">http://cdn.jirengu.com/kejian1/8-1.png</a><br>网络上的路径</li>
-</ul>
-<h1 id="4-展示图片"><a href="#4-展示图片" class="headerlink" title="4.展示图片"></a>4.展示图片</h1><p>把图片上传到网上，然后通过src属性进行引用展示。</p>
-<h1 id="5-html和css书写规范"><a href="#5-html和css书写规范" class="headerlink" title="5.html和css书写规范"></a>5.html和css书写规范</h1><ul>
-<li>统一使用小写；</li>
-<li>不使用内联样式；</li>
-<li>块内容缩进；</li>
-<li>id和class使用有意义的单词，分隔符使用-</li>
-<li>css属性名冒号后面加一个空格。</li>
-</ul>
-<p>切图：<br>如何让文件最小化，如何让图片最清晰<br>PNG-24 透明 可无损压缩<br>JPEG 可以设置图片压缩</p>
+        <p>浏览器出于安全方面的考虑，只允许与本域下的接口交互。不同源的客户端脚本在没有明确授权的情况下，不能读写对方的资源。  </p>
+<p>跨域的方式：</p>
+<h1 id="1-JSONP"><a href="#1-JSONP" class="headerlink" title="1.JSONP"></a>1.JSONP</h1><p>html中script标签可以引入其他域下的js，比如引入线上的jquery库。利用这个特性，可实现跨域访问接口。需要后端支持。 </p>
+<p>JSONP看起来和JSON差不多，只不过被包含在函数中调用中的JSON,就像下面这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">callback(&#123;&quot;name&quot;:&quot;Jack&quot;&#125;);</div></pre></td></tr></table></figure></p>
+<p>以请求高德API天气接口为例，本地调用高德API数据接口，通过动态<code>&lt;script&gt;</code>元素来使用，为src属性指定一个跨域URL。<code>&lt;script&gt;</code>可以不受限制的从其他域加载资源。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var script = document.createElement(&apos;script&apos;);</div><div class="line">script.src = &quot;http://restapi.amap.com/v3/weather/weatherInfo?key=你的key&amp;output=JSON&amp;extensions=base&amp;callback=showWeather&amp;city=&quot;+$(&apos;#cityname&apos;).value;</div><div class="line">document.head.appendChild(script);</div><div class="line">//document.head.removeChild(script);</div><div class="line">//可以在创建script元素后将它删除，避免head里script标签过多，删除标签不影响script获取地址中的资源</div><div class="line"></div><div class="line">//我在url都设定了一个回调函数showWeather；在加载API接口时，返回的数据是这样的：</div><div class="line">showWeather(&#123;&quot;status&quot;:&quot;1&quot;,&quot;count&quot;:&quot;1&quot;,&quot;info&quot;:&quot;OK&quot;,&quot;infocode&quot;:&quot;10000&quot;,&quot;lives&quot;:[&#123;&quot;province&quot;:&quot;上海&quot;,&quot;city&quot;:&quot;上海市&quot;,&quot;adcode&quot;:&quot;310000&quot;,&quot;weather&quot;:&quot;晴&quot;,&quot;temperature&quot;:&quot;33&quot;,&quot;winddirection&quot;:&quot;西&quot;,&quot;windpower&quot;:&quot;4&quot;,&quot;humidity&quot;:&quot;59&quot;,&quot;reporttime&quot;:&quot;2017-07-16 19:00:00&quot;&#125;]&#125;)</div><div class="line">//返回的数据被包裹在showWeather中，因此我们就可以把showWeather当成一个函数，里面的内容即为传入函数的内容，只需要将返回的JSON数据解析成JavaScript对象就可以使用了</div></pre></td></tr></table></figure></p>
+<p>但是我在将返回数据解析成JavaScript对象时遇到了报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function showWeather(data)&#123;</div><div class="line">	data = JSON.parse(data);</div><div class="line">&#125;</div><div class="line">Uncaught SyntaxError: Unexpected token o in JSON at position 1</div><div class="line">[object Object]</div></pre></td></tr></table></figure></p>
+<p>然后我直接打印出data，发现data已经是Object格式的了，并不需要再次解析。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">console.log(data);</div><div class="line">//&#123;status: &quot;1&quot;, count: &quot;1&quot;, info: &quot;OK&quot;, infocode: &quot;10000&quot;, lives: Array(1)&#125;</div></pre></td></tr></table></figure></p>
+<p>经查阅资料后发现，Object在作为<code>JSON.parse</code>的参数时会先转为string，默认toString实现会将Object转为<code>&quot;[object Object]&quot;</code>，<code>JSON.parse</code>将第一个字符’[‘理解为数组开始，第二字符’o’就不知道怎么处理了。  </p>
+<p>如果不确定可以加入这行代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (typeof data === &apos;string&apos;) &#123;</div><div class="line">    data = JSON.parse(data);</div><div class="line"> &#125;</div></pre></td></tr></table></figure></p>
+<p>因此只需要直接使用返回的data就可以了，不需要另外再对data进行解析。</p>
+<p>另：jQuery中<code>$.ajax()</code>方法已经对jsonp进行了封装，它会直接在返回的数据上默认加一个函数头，在<code>success:function()</code>中可以直接使用，不需要进行另外的函数设置。</p>
+<p>HTML页面代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;Title&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;h1&gt;请输入需要查询的城市&lt;/h1&gt;</div><div class="line">&lt;input type=&quot;text&quot; id=&quot;cityname&quot;&gt;</div><div class="line">&lt;button id=&quot;btn&quot;&gt;查询&lt;/button&gt;</div><div class="line">&lt;div class=&quot;today-weather&quot;&gt;</div><div class="line">	&lt;h1&gt;今天天气&lt;/h1&gt;</div><div class="line">	&lt;div id=&quot;city&quot;&gt;城市：&lt;/div&gt;</div><div class="line">	&lt;div id=&quot;weather&quot;&gt;天气：&lt;/div&gt;</div><div class="line">	&lt;div id=&quot;temperature&quot;&gt;温度：&lt;/div&gt;</div><div class="line">	&lt;div id=&quot;winddirection&quot;&gt;风向：&lt;/div&gt;</div><div class="line">	&lt;div id=&quot;windpower&quot;&gt;风力：&lt;/div&gt;</div><div class="line">	&lt;div id=&quot;humidity&quot;&gt;湿度：&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">//设置选择器</div><div class="line">	function $(id)&#123;</div><div class="line">		return document.querySelector(id);</div><div class="line">	&#125;</div><div class="line">//给btn设置监听事件</div><div class="line">	$(&apos;#btn&apos;).addEventListener(&apos;click&apos;,function()&#123;</div><div class="line">		var script = document.createElement(&apos;script&apos;);</div><div class="line">		script.src = &quot;http://restapi.amap.com/v3/weather/weatherInfo?key=你的key&amp;output=JSON&amp;extensions=base&amp;callback=showWeather&amp;city=&quot;+$(&apos;#cityname&apos;).value;</div><div class="line">		document.head.appendChild(script);</div><div class="line">		document.head.removeChild(script);</div><div class="line">	&#125;)</div><div class="line">	function showWeather(data)&#123;</div><div class="line">		var weather = data.lives[0];</div><div class="line">		 	 for(var prop in weather)&#123;</div><div class="line">		 	 	if($(&apos;#&apos;+prop))&#123;</div><div class="line">		 	 		var span = document.createElement(&apos;span&apos;);</div><div class="line">		 	 		span.innerHTML = weather[prop];</div><div class="line">		 	 		$(&apos;#&apos;+prop).appendChild(span);</div><div class="line">		 	 	&#125;</div><div class="line">		  &#125;</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<p>JSONP的不足之处：  </p>
+<ol>
+<li>JSONP从其他域加载代码执行，如果其他域不安全，可能会在代码中夹杂恶意代码。</li>
+<li>要确定JSONP请求是否失败并不容易。</li>
+<li>只能支持GET方式获取数据，需要后端支持。</li>
+</ol>
+<h1 id="2-CORS跨域资源共享"><a href="#2-CORS跨域资源共享" class="headerlink" title="2.CORS跨域资源共享"></a>2.CORS跨域资源共享</h1><p>CORS 全称是跨域资源共享（Cross-Origin Resource Sharing），是一种 ajax 跨域请求资源的方式，支持现代浏览器，IE支持10以上。 实现方式很简单，当你使用 XMLHttpRequest 发送请求时，浏览器发现该请求不符合同源策略，会给该请求加一个请求头：Origin，后台进行一系列处理，如果确定接受请求则在返回结果中加入一个响应头：Access-Control-Allow-Origin; 浏览器判断该相应头中是否包含 Origin 的值，如果有则浏览器会处理响应，我们就可以拿到响应数据，如果不包含浏览器直接驳回，这时我们无法拿到响应数据。所以 CORS 的表象是让你觉得它与同源的 ajax 请求没啥区别，代码完全一样。</p>
+<p>以向高德API请求天气数据为例，在发送<code>$.ajax()</code>请求后，我没有使用JSONP的跨域方法，API一样会返回数据，进入响应后查看发现，在请求头中浏览器自动加入了请求头：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Origin:http://127.0.0.1</div></pre></td></tr></table></figure></p>
+<p>在响应头中可以看到：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Access-Control-Allow-Origin:*</div></pre></td></tr></table></figure></p>
+<p>服务器默认可以给任何请求返回响应，所有看起来代码和普通ajax代码完全相同，没有做跨域操作依然拿到了数据。CORS主要是服务器端的设置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">$(function()&#123;</div><div class="line">	$(&apos;#btn&apos;).click(function()&#123;</div><div class="line">		var span = $(&apos;span&apos;);</div><div class="line">		var city = $(&apos;#cityname&apos;).val();</div><div class="line">		if(span)&#123;</div><div class="line">			span.remove();</div><div class="line">		&#125;</div><div class="line">		if(city)&#123;</div><div class="line">			searchWeather();</div><div class="line">		&#125;</div><div class="line">	&#125;);</div><div class="line">	function searchWeather()&#123;</div><div class="line">		$.ajax(&#123;</div><div class="line">			type:&apos;GET&apos;,</div><div class="line">			url:&quot;http://restapi.amap.com/v3/weather/weatherInfo?key=你的key&amp;output=JSON&amp;extensions=base&amp;city=&quot;+$(&apos;#cityname&apos;).val(),</div><div class="line">			success:function(data)&#123;</div><div class="line">				for(var prop in data.lives[0])&#123;</div><div class="line">			        $(&apos;#&apos;+prop).append(&apos;&lt;span&gt;&apos;+data.lives[0][prop]+&apos;&lt;/span&gt;&apos;);</div><div class="line">				&#125;</div><div class="line">			&#125;,</div><div class="line">			error:function(jqXHR)&#123;</div><div class="line">				console.log(jqXHR.status);</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<h1 id="2-postMessage"><a href="#2-postMessage" class="headerlink" title="2.postMessage"></a>2.postMessage</h1><p>由于同源策略的限制，JavaScript 跨域的问题，一直是一个颇为棘手的问题。HTML5 提供了在网页文档之间互相接收与发送信息的功能。使用这个功能，只要获取到网页所在窗口对象的实例，不仅同源（域 + 端口号）的 Web 网页之间可以互相通信，甚至可以实现跨域通信。</p>
+<p>要想接收从其他窗口发送来的信息，必须对窗口对象的 onmessage 事件进行监听，其它窗口可以通过 postMessage 方法来传递数据。</p>
+<p><strong>语法：</strong><br>otherWindow.postMessage(message, targetOrigin);</p>
+<p><strong>otherWindow</strong><br>其他窗口的一个引用，比如iframe的contentWindow属性、执行window.open返回的窗口对象、或者是命名过或数值索引的window.frames。</p>
+<p>该方法使用两个参数：第一个参数为所发送的消息文本，但也可以是任何 JavaScript 对象（通过 JSON 转换对象为文本），第二个参数为接收消息的对象窗口的 URL 地址，可以在 URL 地址字符串中使用通配符’*’指定全部地。</p>
+<p>为了模拟本地跨域，我在hosts里添加了两个不同的域名：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">127.0.0.1   a.com</div><div class="line">127.0.0.1   b.com</div><div class="line">127.0.0.1   c.com</div></pre></td></tr></table></figure></p>
+<p>在父页面里嵌入了一个子页面，调用postMessage方法向子页面发送数据。在子窗口监听onmessage事件，并显示到input框内。</p>
+<p>父页面代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">  &lt;title&gt;PostMessage A&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;h1&gt;实现PostMessage实现跨域&lt;/h1&gt;</div><div class="line">  &lt;div class=&quot;parent&quot;&gt;</div><div class="line">    &lt;input type=&quot;text&quot; placeholder=&quot;http://a.com:8080/a.html&quot;&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;iframe src=&quot;http://b.com:8080/b.html&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</div><div class="line">  &lt;iframe src=&quot;http://c.com:8080/c.html&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  $(&apos;.parent input&apos;).addEventListener(&apos;input&apos;,function()&#123;</div><div class="line">    //给input输入框添加事件，当输入框内容发生变化时就进行监听，把输入框中的内容发送到b.html和c.html中</div><div class="line">    </div><div class="line">    console.log(this.value);</div><div class="line">    window.frames[0].postMessage(this.value,&apos;http://b.com:8080&apos;);</div><div class="line">    window.frames[1].postMessage(this.value,&apos;http://c.com:8080&apos;);</div><div class="line">    </div><div class="line">    //如果将http://b.com:8080改为*，则表示对所以地址发送信息</div><div class="line">  &#125;)</div><div class="line">  </div><div class="line">  /*</div><div class="line">  * frameList是一个frame对象的集合，它类似一个数组，有length属性且可以使用索引（[i]）来访问。</div><div class="line"></div><div class="line">  * frameList === window 计算结果为true。</div><div class="line">  </div><div class="line">  * 在window.frames类数组中的每一项都代表了窗口对应给定对象的&lt;frame&gt;或&lt;iframe&gt;的内容，</div><div class="line">  而不是(i)frame DOM元素（即window.frames[ 0 ]与document.getElementsByTagName( &quot;iframe&quot; )[ 0 ].contentWindow是相同的）。</div><div class="line">*/</div><div class="line"></div><div class="line">  function $(id)&#123;</div><div class="line">    return document.querySelector(id);</div><div class="line">  &#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p>子页面代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">  &lt;title&gt;PostMessage B&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;input type=&quot;text&quot; placeholder=&quot;http://b.com:8080/b.html&quot; id=&quot;input&quot;&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    function $(id)&#123;</div><div class="line">      return document.querySelector(id);</div><div class="line">    &#125;</div><div class="line">    //接收信息时对window的message进行监听才可以收到信息</div><div class="line">    window.addEventListener(&apos;message&apos;,function(e)&#123;</div><div class="line">      $(&apos;#input&apos;).value = e.data;</div><div class="line">    &#125;)</div><div class="line">  &lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="https://ws1.sinaimg.cn/large/83f2d4ffgy1fij24oxk1xj20ec09s0t3.jpg" alt="postMessage跨域"></p>
+<p>在进行跨域的时候，设置好hosts后，启用本地服务器后，打开<strong>a.com时需要加上端口号</strong>！！<br>即在地址栏输入：<code>a.com:8080/a.html</code></p>
+<p>因为访问网页时都是要通过IP地址及端口号进行访问的，平时我们经常打开的网页绝大多数是超文本传输协议，即http，不要求用户输入网页“<a href="http://”的部分。同样，“80”是超文本传输协议文件的常用端口号，因此一般也不必写明。一般来说用户只要键入统一资源定位符的一部分，比如&quot;www.baidu.com&quot;，此处的端口号是默认的80端口。" target="_blank" rel="external">http://”的部分。同样，“80”是超文本传输协议文件的常用端口号，因此一般也不必写明。一般来说用户只要键入统一资源定位符的一部分，比如&quot;www.baidu.com&quot;，此处的端口号是默认的80端口。</a></p>
+<p>而我在本地启用的服务器需要访问8080端口，因此需要手动输入，如果不输入就无法正常访问。</p>
+<p><img src="https://ws1.sinaimg.cn/large/83f2d4ffgy1fij2egyn38j209o0ht74s.jpg" alt="不输入端口号情况"></p>
 
     
 
@@ -535,7 +530,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/08/21/CSS基础知识2(选择器、伪类)/" id="post_nav-newer" class="prev-content">
+        <a href="/posts/javascript/2017-08-21-jQuery简介.html" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -548,6 +543,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/posts/javascript/2017-08-21-异步.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -633,7 +636,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">17</span></a>
             </ul>
         </li>
         
@@ -641,11 +644,34 @@
 
     <!-- Categories  -->
     
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/css/">css<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">12</span></a>
+            </ul>
+        </li>
+        
+    
 
     <!-- Pages  -->
     
 
     <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">17</span>
+            </a>
+        </li>
+        
     
 </ul>
 
@@ -725,12 +751,6 @@ It will not impact the appearance and can give developers a lot of support :)
     
 
     <!-- Weibo -->
-    
-        <a href="https://weibo.com/p/1005052213729535/home" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
-                <span class="visuallyhidden">Weibo</span>
-            </button><!--
-     --></a>
     
 
     <!-- Instagram -->

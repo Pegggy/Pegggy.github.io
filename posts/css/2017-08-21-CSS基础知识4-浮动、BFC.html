@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2017 | 
+            CSS基础知识4(浮动、BFC) | 
         
         PenFan&#39;s Blog
     </title>
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="PenFan">
     <meta name="description" itemprop="description" content="前端学习">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",css">
 
     <!-- Site Verification -->
     
@@ -65,15 +65,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017 | PenFan&#39;s Blog">
+    <meta property="og:title" content="CSS基础知识4(浮动、BFC) | PenFan&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="前端学习">
-    
+    <meta property="og:article:tag" content="css"> 
 
+    
+        <meta property="article:published_time" content="8月 21, 2017" />
+        <meta property="article:modified_time" content="8月 21, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2017 | PenFan&#39;s Blog">
+    <meta name="twitter:title" content="CSS基础知识4(浮动、BFC) | PenFan&#39;s Blog">
     <meta name="twitter:description" content="前端学习">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -81,13 +84,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/2017/index.html" />
+        <link rel="canonical" href="http://yoursite.com/posts/css/2017-08-21-CSS基础知识4-浮动、BFC.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "PenFan&#39;s Blog",
+        "logo": "/img/favicon.png"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "PenFan",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.png"
+        },
+        "description": "皆为虚空，皆为捕风"
+    },
+    "headline": "CSS基础知识4(浮动、BFC)",
+    "url": "http://yoursite.com/posts/css/2017-08-21-CSS基础知识4-浮动、BFC.html",
+    "datePublished": "8月 21, 2017",
+    "dateModified": "8月 21, 2017",
+    "description": "前端学习",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://yoursite.com"
+    }
+}
+</script>
 
 
     
@@ -267,633 +300,298 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响?</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-清除浮动指什么-如何清除浮动"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.清除浮动指什么? 如何清除浮动?</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-z-index-有什么作用-如何使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">4. z-index 有什么作用? 如何使用?</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-position-relative和负margin都可以使元素位置发生偏移-二者有什么区别"><span class="post-toc-number">4.</span> <span class="post-toc-text">5.position:relative和负margin都可以使元素位置发生偏移?二者有什么区别</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#6-BFC-是什么？如何生成-BFC？BFC-有什么作用？举例说明"><span class="post-toc-number">5.</span> <span class="post-toc-text">6.BFC 是什么？如何生成 BFC？BFC 有什么作用？举例说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#7-在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例"><span class="post-toc-number">6.</span> <span class="post-toc-text">7.在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-图片懒加载.html">图片懒加载</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-图片懒加载.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-jQuery操作.html">jQuery操作</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-jQuery操作.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-jQuery简介.html">jQuery简介</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-jQuery简介.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-跨域.html">跨域</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            浏览器出于安全方面的考虑，只允许与本域下的接口交互。不同源的客户端脚本在没有明确授权的情况下，不能读写对方的资源。  
-跨域的方式：
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-跨域.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-异步.html">异步</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-异步.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-事件.html">事件</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-事件.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-正则表达式.html">正则表达式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-正则表达式.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-Math-Array-Date.html">Math/Array/Date</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            1.Mat...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-Math-Array-Date.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-引用类型与对象拷贝.html">引用类型与对象拷贝</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-引用类型与对象拷贝.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/posts/javascript/2017-08-21-函数与作用域.html">函数与作用域</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/posts/javascript/2017-08-21-函数与作用域.html" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="PenFan's avatar">
-            </div>
-            <div>
-                <strong>PenFan</strong>
-                <span>8月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/page/2/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                CSS基础知识4(浮动、BFC)
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>PenFan</strong>
+        <span>8月 21, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/css/">css</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CSS基础知识4(浮动、BFC)&url=http://yoursite.com/posts/css/2017-08-21-CSS基础知识4-浮动、BFC.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CSS基础知识4(浮动、BFC)&url=http://yoursite.com/posts/css/2017-08-21-CSS基础知识4-浮动、BFC.html&via=PenFan" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/posts/css/2017-08-21-CSS基础知识4-浮动、BFC.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/posts/css/2017-08-21-CSS基础知识4-浮动、BFC.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="1-浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响"><a href="#1-浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响" class="headerlink" title="1.浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响?"></a>1.浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响?</h1><p>浮动元素会脱离正常文档流，但是它会影响布局；</p>
+<p><strong>对父容器来说</strong>，它察觉不到浮动元素的存在；</p>
+<p><strong>对其他浮动元素</strong>，后面的浮动元素会受到前面浮动元素的影响，若float方向相同，父元素无法同时容纳下多个子浮动元素，那么的后面浮动元素会向下移动,直到有足够的空间,如果浮动元素的高度不同,那么向下移动的时候可能被卡住。  </p>
+<p><strong>对普通元素</strong>，当做该浮动元素不存在，按正常文档流显示，占据浮动元素的位置，若用重叠会被浮动元素覆盖住；  </p>
+<p><strong>对文字等行内元素</strong>，会避开浮动元素显示，形成环绕效果。  </p>
+<h1 id="2-清除浮动指什么-如何清除浮动"><a href="#2-清除浮动指什么-如何清除浮动" class="headerlink" title="2.清除浮动指什么? 如何清除浮动?"></a>2.清除浮动指什么? 如何清除浮动?</h1><p>由于浮动元素脱离正常文档流，父元素无法感知浮动元素的存在，因此父元素无法自适应内容的高度。比如当父元素未设置高度，而子元素又都是浮动元素时，会导致父元素高度塌陷，因此需要清除浮动。</p>
+<p><strong>清除浮动的方法</strong></p>
+<p>(1)在父元素下最后一个子元素后添加一个空div，对它清除浮动。缺点是增加了一个无意义的标签。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div style=&quot;border: solid 5px #0e0; width:300px;&quot;&gt;</div><div class="line">    &lt;div style=&quot;height: 100px; width: 100px; background-color: Red;  float:left;&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div style=&quot;height: 100px; width: 100px; background-color: Green;  float:left;&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div style=&quot;height: 100px; width: 100px; background-color: Yellow;  float:left;&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>(2)BFC清除浮动 </p>
+<p>BFC的三个特性：</p>
+<ul>
+<li>BFC会阻止垂直外边距（margin-top、margin-bottom）折叠</li>
+<li>BFC不会重叠浮动元素</li>
+<li>BFC可以包含浮动 </li>
+</ul>
+<p>我们可以利用BFC的第三条特性来清除浮动。也就是说，让父容器形成BFC就可以。形成简单BFC的方法有：</p>
+<ul>
+<li>float为 left|right（缺点：父元素长度根据内容自适应）；</li>
+<li>overflow为 hidden|auto|scroll（缺点：overflow属性会影响滚动条和绝对定位的元素）；</li>
+<li>display为 table-cell|table-caption|inline-block（缺点：无法解决低版本IE问题）；</li>
+<li>position为 absolute|fixed（缺点：改变父元素定位方式）。</li>
+</ul>
+<p>(3)设置伪元素清除浮动  </p>
+<p>对父元素添加clearfix的class；对clearfix设置:after伪元素来清除浮动。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">clearfix:afert&#123;</div><div class="line">    content: &quot;&quot;;</div><div class="line">    display: block;</div><div class="line">    clear: both;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>(4)hasLayout </p>
+<p>在IE6、7内设置hasLayout为true的时候会达到和BFC类似的效果。</p>
+<ul>
+<li>position: absolute </li>
+<li>float: left|right</li>
+<li>display: inline-block</li>
+<li>width: 除 “auto” 外的任意值</li>
+<li>height: 除 “auto” 外的任意值</li>
+<li>zoom: 除 “normal” 外的任意值</li>
+</ul>
+<p>因此一个通用的清除浮动方法就是,为父元素添加一个clearfix的class：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.clearfix&#123;</div><div class="line">    *zoom:1;</div><div class="line">  &#125;</div><div class="line">.clearfix:after&#123;</div><div class="line">    content:&quot;&quot;;</div><div class="line">    display:table;</div><div class="line">    clear:both;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<h1 id="4-z-index-有什么作用-如何使用"><a href="#4-z-index-有什么作用-如何使用" class="headerlink" title="4. z-index 有什么作用? 如何使用?"></a>4. z-index 有什么作用? 如何使用?</h1><p>z-index 属性指定了一个元素及其子元素的 z-order。 当元素之间重叠的时候，z-order 决定哪一个元素覆盖在其余元素的上方显示。 通常来说 z-index 较大的元素会覆盖较小的一个。</p>
+<p>对于一个已经定位的元素（即position属性值是非static的元素），z-index 属性指定：</p>
+<ul>
+<li>元素在当前堆叠上下文中的堆叠层级。</li>
+<li>元素是否创建一个新的本地堆叠上下文。</li>
+</ul>
+<p>z-index取值：</p>
+<ul>
+<li><strong>auto</strong> 元素不会建立一个新的本地堆叠上下文。当前堆叠上下文中新生成的元素和父元素堆叠层级相同。</li>
+<li><strong>number</strong> 设置元素的堆叠层级，数字越大层级越高，可以使用负值降低优先级。</li>
+</ul>
+<h1 id="5-position-relative和负margin都可以使元素位置发生偏移-二者有什么区别"><a href="#5-position-relative和负margin都可以使元素位置发生偏移-二者有什么区别" class="headerlink" title="5.position:relative和负margin都可以使元素位置发生偏移?二者有什么区别"></a>5.position:relative和负margin都可以使元素位置发生偏移?二者有什么区别</h1><p>设置position:relative的元素在设置top、或left等值时，只改变自身位置，不影响后面元素的位置，其他元素仍在正常文档流中。而marin值除了让自身位置发生偏移，还会改变后面元素的位置，使它们脱离正常文档流。</p>
+<h1 id="6-BFC-是什么？如何生成-BFC？BFC-有什么作用？举例说明"><a href="#6-BFC-是什么？如何生成-BFC？BFC-有什么作用？举例说明" class="headerlink" title="6.BFC 是什么？如何生成 BFC？BFC 有什么作用？举例说明"></a>6.BFC 是什么？如何生成 BFC？BFC 有什么作用？举例说明</h1><p>BFC(Block formatting context) 直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</p>
+<p><strong>生成BFC：</strong></p>
+<p>浮动、绝对定位的元素(absolute、fixed定位)、块容器(display属性为inline-block、table、table-cell、table、table-caption)、带有overflow属性(该属性值不为visible和inherit)的display为block的块级元素会在其内部建立新的块级格式化上下文。</p>
+<p><strong>BFC作用：</strong></p>
+<p>元素们处于同一个块级格式化上下文时，会遵守相同的规则/格式(例如父子元素的margin会重叠，同一个BFC内的子元素上下margin会重叠)，但是处于不同的块级格式化上下文时，元素的排列展示遵守的规则/格式是不同的(处于不同的BFC的父子元素的margin不会重叠—&gt;父级元素处于一个BFC中，父级元素内部新建一个BFC)。</p>
+<p><strong>实际应用：</strong></p>
+<p>(1)父子元素的margin-top、margin-bottom会折叠 </p>
+<p>未设置margin时的初始效果：<br><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fhszidvunij218k0dwtc0.jpg" alt="未设置margin时"></p>
+<p>设置margin时父子元素margin重叠，本来只是对子元素设置30px的margin-top值，但是父元素也向下移动了30px，没有达到子元素向下偏移30px的margin值效果。<br><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fhszn27scaj20u60f4tah.jpg" alt="父子元素margin重叠"></p>
+<p>父元素新建一个BFC时，阻止父子元素margin值重叠<br><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fhszp9ek2qj20u00ditad.jpg" alt="父元素内部新建BFC"></p>
+<p>(2)BFC可以阻止文字围绕浮动元素的情况：下图中的例子中，需要在box2元素内部生成新的BFC，使得box2内部的文字不围绕浮动元素</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fht015uamsj21d80j443h.jpg" alt="未生成BFC"></p>
+<p><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fht01znbpqj20um0i2q56.jpg" alt="生成BFC"></p>
+<p>(3)清除内部浮动，使父元素在计算高度时将float子元素的高度计算进去</p>
+<p>父元素塌陷<br><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fht06ncz68j21d00k6af9.jpg" alt="父元素塌陷"></p>
+<p>父元素内部生成BFC<br><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fht07y349gj20ui0iadia.jpg" alt="父元素生成BFC"></p>
+<h1 id="7-在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例"><a href="#7-在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例" class="headerlink" title="7.在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例"></a>7.在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例</h1><p>当元素同处于一个BFC时，元素会产生外边距合并，一般是margin-top和margin-bottom合并，合并外边距会采用较大的margin值。</p>
+<p>让相邻元素不处于一个BFC就可以阻止外边距合并。</p>
+<p>当box1和box2处于同一个BFC时，设置不同的外边距，并没有产生叠加的效果，而是将box1的margin-bottom与box2的margin-top合并为一个margin值30px：<br><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fht0i40cqbj21d40fs78d.jpg" alt="margin值合并"></p>
+<p>当让box2处于另一个BFC下，两个元素的margin值就不会合并了：<br><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fht0mjlwhpj21740h4aee.jpg" alt="margin不合并"></p>
+<p>代码：</p>
+<p><a href="http://js.jirengu.com/muregebexu" target="_blank" rel="external">form表单</a></p>
+<p><a href="http://js.jirengu.com/yidisaqiho" target="_blank" rel="external">遮罩效果</a></p>
+<p><a href="http://js.jirengu.com/loyubabeze" target="_blank" rel="external">简易菜单栏，css实现</a></p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/posts/css/2017-08-21-CSS基础知识5.html" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/posts/css/2017-08-21-CSS基础知识3.html" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     

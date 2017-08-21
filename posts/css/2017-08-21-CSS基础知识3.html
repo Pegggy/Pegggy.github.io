@@ -12,7 +12,7 @@
     
     <title>
         
-            CSS基础知识4(浮动、BFC) | 
+            CSS基础知识3 | 
         
         PenFan&#39;s Blog
     </title>
@@ -65,7 +65,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="CSS基础知识4(浮动、BFC) | PenFan&#39;s Blog">
+    <meta property="og:title" content="CSS基础知识3 | PenFan&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png" />
     <meta property="og:description" content="前端学习">
     <meta property="og:article:tag" content="css"> 
@@ -76,7 +76,7 @@
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="CSS基础知识4(浮动、BFC) | PenFan&#39;s Blog">
+    <meta name="twitter:title" content="CSS基础知识3 | PenFan&#39;s Blog">
     <meta name="twitter:description" content="前端学习">
     <meta name="twitter:image" content="/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -84,7 +84,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2017/08/21/CSS基础知识4-浮动、BFC/index.html" />
+        <link rel="canonical" href="http://yoursite.com/posts/css/2017-08-21-CSS基础知识3.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -110,8 +110,8 @@
         },
         "description": "皆为虚空，皆为捕风"
     },
-    "headline": "CSS基础知识4(浮动、BFC)",
-    "url": "http://yoursite.com/2017/08/21/CSS基础知识4-浮动、BFC/index.html",
+    "headline": "CSS基础知识3",
+    "url": "http://yoursite.com/posts/css/2017-08-21-CSS基础知识3.html",
     "datePublished": "8月 21, 2017",
     "dateModified": "8月 21, 2017",
     "description": "前端学习",
@@ -146,10 +146,6 @@
     
     
     
-    
-    .footer-sns-weibo {
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzUuMiA3OWMtOC42IDMtMjIuOCAxMi40LTMyLjggMjEuOC04LjIgNy44LTIyLjIgMzEtMjQuNiA0MC42LTEgNC4yLTEuNiAxNjctMS42IDM2NC42IDAgMjg0LjguNCAzNTguNCAyLjYgMzY0IDEuNCAzLjggNi44IDEzIDEyIDIwLjQgOC44IDEyLjggMjQgMjUuNCA0MS44IDM1IDYgMy40IDI3IDMuNiAzNjcuNCAzLjYgMjg2LjIgMCAzNjIuNi0uNiAzNjktMi42IDE5LjgtNi4yIDUxLjItMzcuNiA1Ny40LTU3LjQgMi02LjQgMi42LTgyLjYgMi42LTM2OFYxNDFsLTQuMi05Yy0xMS42LTI0LTM5LjItNDkuOC01OC4yLTU0LjItNC4yLTEtMTY4LjYtMS42LTM2NS42LTEuNi0zMDAgMC0zNTkuMi40LTM2NS44IDIuOHptNTU4LjYgMTY5YzguNiAxLjIgMTYuNCA0IDI0IDguNiA2LjIgMy42IDE1LjIgOC4yIDIwLjIgMTAuMiA1LjggMi4yIDE0LjYgOC44IDI1IDE4LjggMjUuNCAyNC44IDMyLjggMzQuOCAzNy44IDUxIDIuNiA4IDcuNCAxOS44IDEwLjggMjYuNCA3LjggMTQuNiAxMS42IDQyLjYgOS40IDY5LTEgMTQuMi0yLjIgMTguNi03LjQgMjYuNC0zLjIgNS4yLTkgMTIuMi0xMi44IDE1LjYtMTMuOCAxMi0zNCA1LjgtMzguOC0xMi0xLjYtNi0xLjQtMTEuNCAxLjItMjMuNCA0LjItMjAgMy00Ni0yLjYtNTguNi0yLjItNS04LTEyLjYtMTIuOC0xNi44LTQuOC00LjItMTQuNi0xNi40LTIxLjgtMjYuOC03LjItMTAuNi0xNS4yLTIwLjgtMTgtMjIuOC0yLjgtMi0xMi42LTYtMjItOS0xNC40LTQuNC0yMC44LTUuNC00My01LjYtMjgtLjItMzEuNC0xLjItNDIuNC0xMS42LTcuNC03LTguNi0xNS42LTMuOC0yNS4yIDctMTMuMiAxNi40LTE2IDU0LjItMTYgMTYuNiAwIDM1LjguOCA0Mi44IDEuOHptLTIxMy42IDc1LjZjMjAuMiAxNS40IDIwLjYgMTYuNCAyMiA0OCAuNiAxNSAxLjggMjkgMi42IDMxIDIuOCA2LjIgMTEgNi42IDIxLjYuNiA1LjQtMy4yIDE0LTUuOCAyMC02LjQgNS44LS42IDE4LjgtMi40IDI5LTQuMiAxNy4yLTMgMTkuNC0zIDM2IC40IDMyIDYuNiAzNS44IDkuMiA0NC4yIDMxLjYgNS4yIDE0IDUuNCAyMS40IDEuMiAzMi44LTIuMiA1LjQtMi44IDExLTIgMTUuNCAxLjggMTAgMTcuNiAyMy40IDM1IDMwLjIgMTEuMiA0LjIgMTYuMiA3LjYgMjcgMTkgMTkuMiAxOS44IDIwLjIgMjMgMjAgNTktLjIgMzUtLjQgMzUuNC0xOS44IDYzLjYtMTMuOCAxOS44LTMyLjQgMzguNi00OSA1MC01IDMuNC0xMi4yIDguOC0xNS44IDEyLTMuOCAzLjItMTEuNiA4LTE3LjIgMTAuNC01LjYgMi42LTE0LjYgNy40LTE5LjggMTAuNi01LjIgMy40LTE1LjggNy42LTIzLjggOS40LTggMi0yMS4yIDYuNi0yOS42IDEwLjItMjIuNCAxMC0zNi4yIDExLjItMTIxLjggMTAuNGwtNzUtLjYtMTktOC40Yy0xMC42LTQuNi0yNS40LTkuOC0zMy0xMS42LTcuNi0xLjYtMTgtNS44LTIzLTlzLTE0LjItOC0yMC40LTEwLjhjLTE4LTgtNTkuNC00Ni4yLTY2LTYxLjItMi4yLTUtNy40LTE0LjQtMTEuNC0yMC44bC03LjItMTJWNTQ5bDcuNi0xMy42YzQuMi03LjQgOS40LTE4LjYgMTEuNi0yNC44IDMuOC0xMS40IDEzLjQtMjcuOCAyNC44LTQyLjYgMjAuMi0yNi4yIDM4LjQtNDYuOCA1My02MCA5LjItOC4yIDIxLTE4LjYgMjYtMjMuMiA1LTQuNCAxMy4yLTExIDE4LjYtMTQuNiA1LjItMy40IDkuNC03LjIgOS40LTggMC0xIDUuNi00LjYgMTIuNi04LjIgNi44LTMuOCAxNi40LTkuNiAyMS40LTEzLjIgNS0zLjYgMTQuNC04IDIxLTkuOCA2LjYtMiAxNy44LTYuNiAyNS0xMC4yIDEyLTYuMiAxNC40LTYuOCAzMi40LTYuOGgxOS40bDEyLjQgOS42em0yMDMuNiAxMy4yYzMgMS42IDYuNiA0LjQgOCA2IDEuNiAxLjggOS40IDcgMTcuNCAxMS42IDE3IDkuNiAxOSAxMyAyNCA0MiAzLjQgMjAuNCAyLjYgMzIuMi0zLjQgNDMuOC03LjYgMTUuMi0yMi44IDIwLjYtMzEuMiAxMS4yLTctNy42LTkuMi0xMy44LTEwLjYtMjkuNi0xLjItMTMuMi0yLjQtMTYuNC05LjYtMjcuMi0xMS0xNi0xNi44LTIwLjYtMjcuMi0yMC42LTEwIDAtMjQtNi4yLTI3LTExLjYtNS44LTEwLjguNC0yNC42IDEyLjQtMjguNCA4LjYtMi42IDQwLjItLjggNDcuMiAyLjh6Ii8+PHBhdGggZD0iTTQyNCA0NzcuNGMtMzIuNiAzLjYtNDcuOCA3LTYxLjggMTMuOC04IDQtMTkgOC40LTI0LjIgMTAtNS4yIDEuNi0xMi40IDUtMTYuMiA3LjgtMy44IDIuNi0xMSA3LjYtMTYuMiAxMS0xMy40IDguOC0zNSAzMy4yLTM4LjggNDQtMS44IDUtNS40IDE0LjQtOC4yIDIxLTguOCAyMS4yLTguMiAyNi44IDQgNTMgMTAuNiAyMi42IDExIDIzLjIgMjcuNiAzNi40IDIxIDE2LjggMjMuNiAxOC40IDUwLjggMjguMiAyMC4yIDcuMiAyNC42IDggNTQgMTAgMTcuNiAxLjIgNDUuNiAyLjIgNjIgMi4ybDMwIC4yIDE3LjQtOC40YzkuNi00LjYgMjIuNC05LjYgMjguMi0xMS40IDYtMS44IDE1LjQtNi4yIDIwLjgtMTAgNS40LTMuNiAxMy40LTguNiAxNy42LTEwLjggOS4yLTQuNiAzOS0zNC40IDM5LTM5IDAtMS42IDMuOC0xMC4yIDguNC0xOC44IDcuOC0xNC4yIDguNi0xNi44IDguNC0yOS42LS4yLTEyLjgtMS0xNS44LTEwLjYtMzQuNi0xMy40LTI2LjItMzAuNC00My42LTUwLjItNTEuNC03LjItMi44LTE2LjItNy0yMC05LjYtMTEuNC03LjYtMTcuNi05LjItNDguOC0xMi40LTI3LjYtMi44LTU2LjYtMy40LTczLjItMS42em0zOS40IDQ0LjRjMTEuMiAyLjIgMjIuNiA1IDI1IDYuNCA3IDMuNiAyNiAyMS44IDMwLjggMjkuNCA4LjYgMTMuNCAxMSA1NCA0LjYgNzctMi42IDkuNi0xOC44IDI3LjYtMzkuNCA0NC4yLTE1LjYgMTIuNC0xNyAxMy0yOS44IDE0LTcuNi44LTIyLjQgMi4yLTMzIDMuNi0yMi42IDIuNi00NS42IDEtNTMuOC0zLjgtMy4yLTItOC02LjgtMTAuOC0xMC44LTIuNi00LjItOC40LTEwLjQtMTIuOC0xMy44LTguMi02LjgtMTMuNC0xNi40LTE5LjQtMzctMy44LTEzLjItMi44LTIxLjggNS4yLTQ3LjYgMy4yLTEwLjQgNi0xNC42IDE3LjQtMjUuOCAxMi40LTEyLjIgMjMuOC0yMi4yIDMzLjItMjkuNiA0LTMgMzguNi05LjQgNTMuNC05LjggNSAwIDE4LjIgMS42IDI5LjQgMy42eiIvPjxwYXRoIGQ9Ik0zODcuMiA2MDZjLTEyLjIgMy44LTE4LjIgMTMuNC0xNSAyNC42IDUuOCAyMS4yIDI3LjggMjUuOCA0MC42IDguNiA2LjYtOC44IDcuOC0xNi4yIDQuMi0yNC00LjgtMTAuMi0xNS40LTEzLjQtMjkuOC05LjJ6Ii8+PC9zdmc+);
-    }
     
     
     
@@ -331,7 +327,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响?</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-清除浮动指什么-如何清除浮动"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.清除浮动指什么? 如何清除浮动?</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-z-index-有什么作用-如何使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">4. z-index 有什么作用? 如何使用?</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-position-relative和负margin都可以使元素位置发生偏移-二者有什么区别"><span class="post-toc-number">4.</span> <span class="post-toc-text">5.position:relative和负margin都可以使元素位置发生偏移?二者有什么区别</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#6-BFC-是什么？如何生成-BFC？BFC-有什么作用？举例说明"><span class="post-toc-number">5.</span> <span class="post-toc-text">6.BFC 是什么？如何生成 BFC？BFC 有什么作用？举例说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#7-在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例"><span class="post-toc-number">6.</span> <span class="post-toc-text">7.在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-块级元素和行内元素"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.块级元素和行内元素</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#块级元素"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">块级元素</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#行内元素"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">行内元素</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#行内元素与块级元素的区别"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">行内元素与块级元素的区别</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-CSS继承"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.CSS继承</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可继承属性"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">可继承属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#不可继承属性"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">不可继承属性</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-水平居中"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.水平居中</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#块级元素水平居中"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">块级元素水平居中</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#行内元素水平居中"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">行内元素水平居中</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-单行文本溢出加…-实现"><span class="post-toc-number">4.</span> <span class="post-toc-text">4.单行文本溢出加… 实现</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-px、em、rem的区别"><span class="post-toc-number">5.</span> <span class="post-toc-text">5.px、em、rem的区别</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#7-下面代码的作用"><span class="post-toc-number">6.</span> <span class="post-toc-text">7.下面代码的作用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码"><span class="post-toc-number">7.</span> <span class="post-toc-text">代码</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -369,7 +365,7 @@
         
     
             <p class="article-headline-p">
-                CSS基础知识4(浮动、BFC)
+                CSS基础知识3
             </p>
         </div>
 
@@ -428,7 +424,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CSS基础知识4(浮动、BFC)&url=http://yoursite.com/2017/08/21/CSS基础知识4-浮动、BFC/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CSS基础知识3&url=http://yoursite.com/posts/css/2017-08-21-CSS基础知识3.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -437,7 +433,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CSS基础知识4(浮动、BFC)&url=http://yoursite.com/2017/08/21/CSS基础知识4-浮动、BFC/index.html&via=PenFan" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CSS基础知识3&url=http://yoursite.com/posts/css/2017-08-21-CSS基础知识3.html&via=PenFan" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -446,7 +442,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/08/21/CSS基础知识4-浮动、BFC/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/posts/css/2017-08-21-CSS基础知识3.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -455,7 +451,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/08/21/CSS基础知识4-浮动、BFC/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/posts/css/2017-08-21-CSS基础知识3.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -479,77 +475,38 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="1-浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响"><a href="#1-浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响" class="headerlink" title="1.浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响?"></a>1.浮动元素有什么特征？对父容器、其他浮动元素、普通元素、文字分别有什么影响?</h1><p>浮动元素会脱离正常文档流，但是它会影响布局；</p>
-<p><strong>对父容器来说</strong>，它察觉不到浮动元素的存在；</p>
-<p><strong>对其他浮动元素</strong>，后面的浮动元素会受到前面浮动元素的影响，若float方向相同，父元素无法同时容纳下多个子浮动元素，那么的后面浮动元素会向下移动,直到有足够的空间,如果浮动元素的高度不同,那么向下移动的时候可能被卡住。  </p>
-<p><strong>对普通元素</strong>，当做该浮动元素不存在，按正常文档流显示，占据浮动元素的位置，若用重叠会被浮动元素覆盖住；  </p>
-<p><strong>对文字等行内元素</strong>，会避开浮动元素显示，形成环绕效果。  </p>
-<h1 id="2-清除浮动指什么-如何清除浮动"><a href="#2-清除浮动指什么-如何清除浮动" class="headerlink" title="2.清除浮动指什么? 如何清除浮动?"></a>2.清除浮动指什么? 如何清除浮动?</h1><p>由于浮动元素脱离正常文档流，父元素无法感知浮动元素的存在，因此父元素无法自适应内容的高度。比如当父元素未设置高度，而子元素又都是浮动元素时，会导致父元素高度塌陷，因此需要清除浮动。</p>
-<p><strong>清除浮动的方法</strong></p>
-<p>(1)在父元素下最后一个子元素后添加一个空div，对它清除浮动。缺点是增加了一个无意义的标签。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div style=&quot;border: solid 5px #0e0; width:300px;&quot;&gt;</div><div class="line">    &lt;div style=&quot;height: 100px; width: 100px; background-color: Red;  float:left;&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div style=&quot;height: 100px; width: 100px; background-color: Green;  float:left;&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div style=&quot;height: 100px; width: 100px; background-color: Yellow;  float:left;&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div style=&quot;clear:both;&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>(2)BFC清除浮动 </p>
-<p>BFC的三个特性：</p>
-<ul>
-<li>BFC会阻止垂直外边距（margin-top、margin-bottom）折叠</li>
-<li>BFC不会重叠浮动元素</li>
-<li>BFC可以包含浮动 </li>
+        <h1 id="1-块级元素和行内元素"><a href="#1-块级元素和行内元素" class="headerlink" title="1.块级元素和行内元素"></a>1.块级元素和行内元素</h1><h2 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">h1~h6,p,div,form,table,tr,td,ul,ol,li,dd,dt,dl,hr</div></pre></td></tr></table></figure>
+<h2 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">span,a,input,button,img,strong,em,label,select,textarea,br</div></pre></td></tr></table></figure>
+<h2 id="行内元素与块级元素的区别"><a href="#行内元素与块级元素的区别" class="headerlink" title="行内元素与块级元素的区别"></a>行内元素与块级元素的区别</h2><ul>
+<li>块级元素占满一整行，行内元素只占元素自身宽度；</li>
+<li>可以对块级元素设置width和height，而对行内元素设置width和height无法生效；</li>
+<li>对行内元素设置上下margin、上下padding时无法生效，只有设置左右margin、padding才能生效，若父级元素是块级元素，则无法感知到行内元素的上下margin、padding，并不会包裹该行内元素；</li>
 </ul>
-<p>我们可以利用BFC的第三条特性来清除浮动。也就是说，让父容器形成BFC就可以。形成简单BFC的方法有：</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fhtru5c4rrj21eg0g0q6t.jpg" alt="上下margin、padding无效"></p>
 <ul>
-<li>float为 left|right（缺点：父元素长度根据内容自适应）；</li>
-<li>overflow为 hidden|auto|scroll（缺点：overflow属性会影响滚动条和绝对定位的元素）；</li>
-<li>display为 table-cell|table-caption|inline-block（缺点：无法解决低版本IE问题）；</li>
-<li>position为 absolute|fixed（缺点：改变父元素定位方式）。</li>
+<li>块级元素内部可以放置会计元素和行内元素，而行内元素内只能放行内元素和文本，无法放置块级元素。</li>
 </ul>
-<p>(3)设置伪元素清除浮动  </p>
-<p>对父元素添加clearfix的class；对clearfix设置:after伪元素来清除浮动。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">clearfix:afert&#123;</div><div class="line">    content: &quot;&quot;;</div><div class="line">    display: block;</div><div class="line">    clear: both;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>(4)hasLayout </p>
-<p>在IE6、7内设置hasLayout为true的时候会达到和BFC类似的效果。</p>
-<ul>
-<li>position: absolute </li>
-<li>float: left|right</li>
-<li>display: inline-block</li>
-<li>width: 除 “auto” 外的任意值</li>
-<li>height: 除 “auto” 外的任意值</li>
-<li>zoom: 除 “normal” 外的任意值</li>
-</ul>
-<p>因此一个通用的清除浮动方法就是,为父元素添加一个clearfix的class：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.clearfix&#123;</div><div class="line">    *zoom:1;</div><div class="line">  &#125;</div><div class="line">.clearfix:after&#123;</div><div class="line">    content:&quot;&quot;;</div><div class="line">    display:table;</div><div class="line">    clear:both;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
-<h1 id="4-z-index-有什么作用-如何使用"><a href="#4-z-index-有什么作用-如何使用" class="headerlink" title="4. z-index 有什么作用? 如何使用?"></a>4. z-index 有什么作用? 如何使用?</h1><p>z-index 属性指定了一个元素及其子元素的 z-order。 当元素之间重叠的时候，z-order 决定哪一个元素覆盖在其余元素的上方显示。 通常来说 z-index 较大的元素会覆盖较小的一个。</p>
-<p>对于一个已经定位的元素（即position属性值是非static的元素），z-index 属性指定：</p>
-<ul>
-<li>元素在当前堆叠上下文中的堆叠层级。</li>
-<li>元素是否创建一个新的本地堆叠上下文。</li>
-</ul>
-<p>z-index取值：</p>
-<ul>
-<li><strong>auto</strong> 元素不会建立一个新的本地堆叠上下文。当前堆叠上下文中新生成的元素和父元素堆叠层级相同。</li>
-<li><strong>number</strong> 设置元素的堆叠层级，数字越大层级越高，可以使用负值降低优先级。</li>
-</ul>
-<h1 id="5-position-relative和负margin都可以使元素位置发生偏移-二者有什么区别"><a href="#5-position-relative和负margin都可以使元素位置发生偏移-二者有什么区别" class="headerlink" title="5.position:relative和负margin都可以使元素位置发生偏移?二者有什么区别"></a>5.position:relative和负margin都可以使元素位置发生偏移?二者有什么区别</h1><p>设置position:relative的元素在设置top、或left等值时，只改变自身位置，不影响后面元素的位置，其他元素仍在正常文档流中。而marin值除了让自身位置发生偏移，还会改变后面元素的位置，使它们脱离正常文档流。</p>
-<h1 id="6-BFC-是什么？如何生成-BFC？BFC-有什么作用？举例说明"><a href="#6-BFC-是什么？如何生成-BFC？BFC-有什么作用？举例说明" class="headerlink" title="6.BFC 是什么？如何生成 BFC？BFC 有什么作用？举例说明"></a>6.BFC 是什么？如何生成 BFC？BFC 有什么作用？举例说明</h1><p>BFC(Block formatting context) 直译为”块级格式化上下文”。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</p>
-<p><strong>生成BFC：</strong></p>
-<p>浮动、绝对定位的元素(absolute、fixed定位)、块容器(display属性为inline-block、table、table-cell、table、table-caption)、带有overflow属性(该属性值不为visible和inherit)的display为block的块级元素会在其内部建立新的块级格式化上下文。</p>
-<p><strong>BFC作用：</strong></p>
-<p>元素们处于同一个块级格式化上下文时，会遵守相同的规则/格式(例如父子元素的margin会重叠，同一个BFC内的子元素上下margin会重叠)，但是处于不同的块级格式化上下文时，元素的排列展示遵守的规则/格式是不同的(处于不同的BFC的父子元素的margin不会重叠—&gt;父级元素处于一个BFC中，父级元素内部新建一个BFC)。</p>
-<p><strong>实际应用：</strong></p>
-<p>(1)父子元素的margin-top、margin-bottom会折叠 </p>
-<p>未设置margin时的初始效果：<br><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fhszidvunij218k0dwtc0.jpg" alt="未设置margin时"></p>
-<p>设置margin时父子元素margin重叠，本来只是对子元素设置30px的margin-top值，但是父元素也向下移动了30px，没有达到子元素向下偏移30px的margin值效果。<br><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fhszn27scaj20u60f4tah.jpg" alt="父子元素margin重叠"></p>
-<p>父元素新建一个BFC时，阻止父子元素margin值重叠<br><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fhszp9ek2qj20u00ditad.jpg" alt="父元素内部新建BFC"></p>
-<p>(2)BFC可以阻止文字围绕浮动元素的情况：下图中的例子中，需要在box2元素内部生成新的BFC，使得box2内部的文字不围绕浮动元素</p>
-<p><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fht015uamsj21d80j443h.jpg" alt="未生成BFC"></p>
-<p><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fht01znbpqj20um0i2q56.jpg" alt="生成BFC"></p>
-<p>(3)清除内部浮动，使父元素在计算高度时将float子元素的高度计算进去</p>
-<p>父元素塌陷<br><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fht06ncz68j21d00k6af9.jpg" alt="父元素塌陷"></p>
-<p>父元素内部生成BFC<br><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fht07y349gj20ui0iadia.jpg" alt="父元素生成BFC"></p>
-<h1 id="7-在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例"><a href="#7-在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例" class="headerlink" title="7.在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例"></a>7.在什么场景下会出现外边距合并？如何合并？如何不让相邻元素外边距合并？给个父子外边距合并的范例</h1><p>当元素同处于一个BFC时，元素会产生外边距合并，一般是margin-top和margin-bottom合并，合并外边距会采用较大的margin值。</p>
-<p>让相邻元素不处于一个BFC就可以阻止外边距合并。</p>
-<p>当box1和box2处于同一个BFC时，设置不同的外边距，并没有产生叠加的效果，而是将box1的margin-bottom与box2的margin-top合并为一个margin值30px：<br><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fht0i40cqbj21d40fs78d.jpg" alt="margin值合并"></p>
-<p>当让box2处于另一个BFC下，两个元素的margin值就不会合并了：<br><img src="http://ww1.sinaimg.cn/mw690/83f2d4ffly1fht0mjlwhpj21740h4aee.jpg" alt="margin不合并"></p>
-<p>代码：</p>
-<p><a href="http://js.jirengu.com/muregebexu" target="_blank" rel="external">form表单</a></p>
-<p><a href="http://js.jirengu.com/yidisaqiho" target="_blank" rel="external">遮罩效果</a></p>
-<p><a href="http://js.jirengu.com/loyubabeze" target="_blank" rel="external">简易菜单栏，css实现</a></p>
+<h1 id="2-CSS继承"><a href="#2-CSS继承" class="headerlink" title="2.CSS继承"></a>2.CSS继承</h1><p>CSS继承是指对某元素指定样式时，该样式不仅会对该元素生效，还会将样式应用到它的后代元素中。</p>
+<h2 id="可继承属性"><a href="#可继承属性" class="headerlink" title="可继承属性"></a>可继承属性</h2><p>文本属性：text-align,text-indent,text-decoration,text-transform,word-spacing,letter-spacing,line-height等</p>
+<p>字体属性：font-size,font-family,font-weight,font-style</p>
+<p>元素颜色属性：color(不包括背景)</p>
+<p>列表属性：list-style,list-style-type,list-style-image</p>
+<h2 id="不可继承属性"><a href="#不可继承属性" class="headerlink" title="不可继承属性"></a>不可继承属性</h2><p>一般，大多数框模型属性（包括外边距、内边距、背景、边框等）都无法继承。</p>
+<p>比如盒子模型属性：margin,padding,border,display,height,width,</p>
+<p>定位属性：left,top,right,bottom,float,position,z-index,overflow,</p>
+<p>背景属性：background,background-img,background-repeat,background-color</p>
+<h1 id="3-水平居中"><a href="#3-水平居中" class="headerlink" title="3.水平居中"></a>3.水平居中</h1><h2 id="块级元素水平居中"><a href="#块级元素水平居中" class="headerlink" title="块级元素水平居中"></a>块级元素水平居中</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    margin:0 auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="行内元素水平居中"><a href="#行内元素水平居中" class="headerlink" title="行内元素水平居中"></a>行内元素水平居中</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    text-align:center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="4-单行文本溢出加…-实现"><a href="#4-单行文本溢出加…-实现" class="headerlink" title="4.单行文本溢出加… 实现"></a>4.单行文本溢出加… 实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    white-space:nowrap;//不换行</div><div class="line">    overflow:hidden;//超出部分隐藏</div><div class="line">    text-overflow:ellipsis;//文本溢出显示...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="5-px、em、rem的区别"><a href="#5-px、em、rem的区别" class="headerlink" title="5.px、em、rem的区别"></a>5.px、em、rem的区别</h1><p>px：固定单位，直接设置，与其他元素无关</p>
+<p>em：相对单位，相对于父元素字体大小</p>
+<p>rem：相对单位，相对于根元素(html)字体大小</p>
+<h1 id="7-下面代码的作用"><a href="#7-下面代码的作用" class="headerlink" title="7.下面代码的作用"></a>7.下面代码的作用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">  font: 12px/1.5 tahoma,arial,&apos;Hiragino Sans GB&apos;,&apos;\5b8b\4f53&apos;,sans-serif;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>设置body的字体大小为12px，行高为1.5倍像素值；</p>
+<p>之后五个元素为设置字体，首选字体为tohoma，如果该字体，如果该字体用户电脑中没有，则采用下一字体，以此类推。</p>
+<p>‘Hiragino Sans GB’加引号是因为字体名字中有空格，若不加引号，空格会被识别为分隔符，该字体会被识别成三个字体名字。</p>
+<p>\5b8b\4f53代表字体名称的Unicode码，为避免直接写字体中文名字时产生乱码，\5b8b\4f53表示宋体。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p><a href="http://js.jirengu.com/rehufagequ/" target="_blank" rel="external">button效果</a><br><a href="http://js.jirengu.com/lozuyekuku/" target="_blank" rel="external">表格效果</a><br><a href="http://js.jirengu.com/rujohijico/" target="_blank" rel="external">border实现三角形</a><br><a href="http://js.jirengu.com/koganezolu/" target="_blank" rel="external">实现card</a></p>
 
     
 
@@ -569,7 +526,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/08/21/CSS基础知识5/" id="post_nav-newer" class="prev-content">
+        <a href="/posts/css/2017-08-21-CSS基础知识4-浮动、BFC.html" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -583,7 +540,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2017/08/21/CSS基础知识3/" id="post_nav-older" class="next-content">
+        <a href="/posts/css/2017-08-21-CSS基础知识2(选择器、伪类).html" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
@@ -675,7 +632,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">5</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">17</span></a>
             </ul>
         </li>
         
@@ -683,11 +640,34 @@
 
     <!-- Categories  -->
     
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/css/">css<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">12</span></a>
+            </ul>
+        </li>
+        
+    
 
     <!-- Pages  -->
     
 
     <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">17</span>
+            </a>
+        </li>
+        
     
 </ul>
 
@@ -767,12 +747,6 @@ It will not impact the appearance and can give developers a lot of support :)
     
 
     <!-- Weibo -->
-    
-        <a href="https://weibo.com/p/1005052213729535/home" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
-                <span class="visuallyhidden">Weibo</span>
-            </button><!--
-     --></a>
     
 
     <!-- Instagram -->

@@ -72,7 +72,7 @@
 
     
         <meta property="article:published_time" content="8月 21, 2017" />
-        <meta property="article:modified_time" content="8月 21, 2017" />
+        <meta property="article:modified_time" content="9月 07, 2017" />
     
 
     <!-- The Twitter Card protocol -->
@@ -113,7 +113,7 @@
     "headline": "图片懒加载",
     "url": "http://yoursite.com/posts/javascript/2017-08-21-图片懒加载.html",
     "datePublished": "8月 21, 2017",
-    "dateModified": "8月 21, 2017",
+    "dateModified": "9月 07, 2017",
     "description": "前端学习",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -327,7 +327,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-判断一个元素是否出现在窗口可视范围内（浏览器上下边缘之间）"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.判断一个元素是否出现在窗口可视范围内（浏览器上下边缘之间）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-当窗口滚动时，判断一个元素是不是出现在窗口可视范围。每次出现都在控制台打印-true"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.当窗口滚动时，判断一个元素是不是出现在窗口可视范围。每次出现都在控制台打印 true</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-当窗口滚动时，判断一个元素是不是出现在窗口可视范围。在元素第一次出现时在控制台打印-true，以后再次出现不做任何处理。"><span class="post-toc-number">3.</span> <span class="post-toc-text">3.当窗口滚动时，判断一个元素是不是出现在窗口可视范围。在元素第一次出现时在控制台打印 true，以后再次出现不做任何处理。</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-图片懒加载的原理是什么？"><span class="post-toc-number">4.</span> <span class="post-toc-text">4.图片懒加载的原理是什么？</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#懒加载"><span class="post-toc-number">1.</span> <span class="post-toc-text">懒加载</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">原理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">实现</span></a></li></ol></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -475,14 +475,24 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="1-判断一个元素是否出现在窗口可视范围内（浏览器上下边缘之间）"><a href="#1-判断一个元素是否出现在窗口可视范围内（浏览器上下边缘之间）" class="headerlink" title="1.判断一个元素是否出现在窗口可视范围内（浏览器上下边缘之间）"></a>1.判断一个元素是否出现在窗口可视范围内（浏览器上下边缘之间）</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function isVisible($node)&#123;</div><div class="line">    //获取滚动高度</div><div class="line">    var scrollTop = $(window).scrollTop();</div><div class="line">    //获取窗口高度</div><div class="line">    var windowHeight = $(window).height();</div><div class="line">    //获取图片离根节点的高度</div><div class="line">    var offsetTop = $node.offset().top;</div><div class="line">    //如果根节点高度小于滚动高度与窗口高度之和，并且大于滚动高度，</div><div class="line">    //此时图片就出现在视窗内</div><div class="line">    if(offsetTop &lt; scrollTop + windowHeight &amp;&amp; offsetTop &gt; scrollTop)&#123;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">    return false;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="2-当窗口滚动时，判断一个元素是不是出现在窗口可视范围。每次出现都在控制台打印-true"><a href="#2-当窗口滚动时，判断一个元素是不是出现在窗口可视范围。每次出现都在控制台打印-true" class="headerlink" title="2.当窗口滚动时，判断一个元素是不是出现在窗口可视范围。每次出现都在控制台打印 true"></a>2.当窗口滚动时，判断一个元素是不是出现在窗口可视范围。每次出现都在控制台打印 true</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function isVisible($node)&#123;</div><div class="line"></div><div class="line">    var scrollTop = $(window).scrollTop();</div><div class="line">    var windowHeight = $(window).height();</div><div class="line">    var offsetTop = $node.offset().top;</div><div class="line">    if(offsetTop &lt; scrollTop + windowHeight &amp;&amp; offsetTop &gt; scrollTop)&#123;</div><div class="line">        console.log(&apos;true&apos;);</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">    return false;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="3-当窗口滚动时，判断一个元素是不是出现在窗口可视范围。在元素第一次出现时在控制台打印-true，以后再次出现不做任何处理。"><a href="#3-当窗口滚动时，判断一个元素是不是出现在窗口可视范围。在元素第一次出现时在控制台打印-true，以后再次出现不做任何处理。" class="headerlink" title="3.当窗口滚动时，判断一个元素是不是出现在窗口可视范围。在元素第一次出现时在控制台打印 true，以后再次出现不做任何处理。"></a>3.当窗口滚动时，判断一个元素是不是出现在窗口可视范围。在元素第一次出现时在控制台打印 true，以后再次出现不做任何处理。</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function isVisible($node)&#123;</div><div class="line">    var scrollTop = $(window).scrollTop();</div><div class="line">    var windowHeight = $(window).height();</div><div class="line">    var offsetTop = $node.offset().top;</div><div class="line">    </div><div class="line">    if(!$node.data(&apos;hasLoaded&apos;) &amp;&amp; offsetTop &lt; scrollTop + windowHeight &amp;&amp; offsetTop &gt; scrollTop &amp;&amp; )&#123;</div><div class="line">        //为加载过的图片设置hasLoaded属性为true</div><div class="line">        $node.data(&apos;hasLoaded&apos;,true);</div><div class="line">        console.log(true);</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">    return false;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h1 id="4-图片懒加载的原理是什么？"><a href="#4-图片懒加载的原理是什么？" class="headerlink" title="4.图片懒加载的原理是什么？"></a>4.图片懒加载的原理是什么？</h1><p>1.首先把图片的src属性设置为设置为空，或者放入一张空白图片，把图片真实地址放入自定义属性中。</p>
+        <h1 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h1><p>对于图片过多的页面，当打开页面时就加载页面上所有的图片，就会减缓页面的加载速度，造成迟缓、卡顿等现象，这是比较差的用户体验。因此我们可以等到图片出现在用户的可视区域内再去加载，这样既能提高页面加载速度，也可以提高用户体验。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>1.首先把img的src属性设置为设置为空，或者放入一张空白图片（为了避免某些浏览器在src为空时显示X），把图片真实地址放入自定义属性（data-src）中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=&quot;&quot; data-src=&quot;aaa.jpg&quot;&gt;</div></pre></td></tr></table></figure></p>
 <p>2.当滚动页面时，判断img标签是否出现在视窗内。当img出现在视窗内进行判断图片是否已经加载，若加载过则无需处理，若未加载过则进行加载。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//判断图片是否已经加载</div><div class="line">function isLoaded($img)&#123;</div><div class="line">    return $img.attr(src) === $img.attr(&apos;data-src&apos;);</div><div class="line">&#125;</div><div class="line">//加载图片</div><div class="line">function loadImg($img)&#123;</div><div class="line">    $img.attr(&apos;src&apos;,$img.attr(&apos;data-src&apos;));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>代码：</p>
-<p><a href="https://pegggy.github.io/jirengudemo/jinjie16/index.html" target="_blank" rel="external">图片懒加载</a><br><a href="https://github.com/Pegggy/jirengudemo/blob/master/jinjie16/news.html" target="_blank" rel="external">新闻懒加载</a></p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>1.判断图片是否出现在视窗中（使用jQuery）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function isVisible($node)&#123;</div><div class="line">    //获取滚动高度</div><div class="line">    var scrollTop = $(window).scrollTop();</div><div class="line">    //获取窗口高度</div><div class="line">    var windowHeight = $(window).height();</div><div class="line">    //获取图片离根节点的高度</div><div class="line">    var offsetTop = $node.offset().top;</div><div class="line">    //如果根节点高度小于滚动高度与窗口高度之和，并且大于滚动高度，</div><div class="line">    //图片就出现在视窗内</div><div class="line">    if(offsetTop &lt; scrollTop + windowHeight &amp;&amp; offsetTop &gt; scrollTop)&#123;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">    return false;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>因为图片第一次出现在视窗时需要加载，当图片第二次出现在视窗时，其实不需要做任何处理，因此我们可以对第一次代码进行改进。对加载过的图片新增一个自定义属性data-hasLoaded，判断图片是否存在该属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function isVisible($node)&#123;</div><div class="line">    var scrollTop = $(window).scrollTop();</div><div class="line">    var windowHeight = $(window).height();</div><div class="line">    var offsetTop = $node.offset().top;</div><div class="line">    //当图片不存在data-hasLoaded属性，并且出现出现在视窗范围内时返回true</div><div class="line">    if(!$node.data(&apos;hasLoaded&apos;) &amp;&amp; offsetTop &lt; scrollTop + windowHeight &amp;&amp; offsetTop &gt; scrollTop &amp;&amp; )&#123;</div><div class="line">        //为加载过的图片设置hasLoaded属性为true</div><div class="line">        $node.data(&apos;hasLoaded&apos;,true);</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">    return false;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>2.加载图片。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function loadImg($img)&#123;</div><div class="line">     $img.attr(&apos;src&apos;,$img.attr(&apos;data-src&apos;));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>3.判断页面中的图片是否在第一次出现在视窗并且没有加载过，那就加载该图片。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">fuction renderImg()&#123;</div><div class="line">    //获取包裹img元素下的所有img图片</div><div class="line">    var $imgs = $(&apos;.img-ct img&apos;);</div><div class="line">    //对每张图片进行判断，当图片第一次出现在视窗中，就加载图片</div><div class="line">    $imgs.each(function()&#123;</div><div class="line">      if(isVisiable($(this))&#123;</div><div class="line">        loadImg($(this));</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>4.这样，我们加载图片的主体已经完成，此时需要对窗口滚动绑定事件，每次滚动都触发renderImg函数，看是否需要加载图片。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(window).scroll(function()&#123;</div><div class="line">  renderImg();  </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>当用户持续滚动时会触发非常多次isVisiable函数，当图片非常多的情况下会造成内存占用过大，滚动出现卡顿、迟滞的现象。</p>
+<p>因此可以通过设置一个定时器，当用户滚动停止后100ms后才执行renderImg函数，当用户持续滚动时会不停设置clock，而在clock已经存在的情况下，取消上一次的clock，这样就只有最后一次的clock才生效。</p>
+<p>因此可以这样修改:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//用户打开页面时就进行判断，使用户打开时看到的页面不为空</div><div class="line">renderImg();</div><div class="line">var clock;</div><div class="line"></div><div class="line">$(window).scroll(function()&#123;</div><div class="line">    if(clock)&#123;</div><div class="line">        clearTimeout(clock);</div><div class="line">    &#125;</div><div class="line">    clock = setTimeout(function()&#123;</div><div class="line">        renderImg();</div><div class="line">    &#125;,100)</div><div class="line">)</div></pre></td></tr></table></figure></p>
+<p>这样一个简单的图片懒加载就实现了。</p>
+<p><a href="https://pegggy.github.io/js-/lazyRender/picLazyRender/index.html" target="_blank" rel="external">效果预览</a></p>
 
     
 
@@ -608,7 +618,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">18</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">18</span></a>
             </ul>
         </li>
         
@@ -626,7 +636,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/css/">css<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">13</span></a>
+                <a class="sidebar_archives-link" href="/categories/css/">css<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">15</span></a>
             </ul>
         </li>
         
@@ -640,7 +650,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">18</span>
+                <span class="sidebar-badge">20</span>
             </a>
         </li>
         
